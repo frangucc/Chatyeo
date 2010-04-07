@@ -1,0 +1,31 @@
+a{outline:none}
+#wayfindheader {height: 57px;width: 100%;background-image: url(../img/headerbg.jpg);background-repeat: repeat-x;position: absolute;z-index: 9;}
+#wayfindheader .logo {margin-left: 17px;float:left;}
+#wayfindheader h3 {color:#fff;font-size:108%;margin-top:30px;margin-left:10px;float:left;}
+#wayfindheader h3 .pinkpunk {color:#fc02e1;}
+#wayfindheader #wayfindtoolcontainer {width:351px;height:31px;float:left;margin-top:10px;margin-left:20px;background-image: url(../img/wayfair-toolsBG.jpg);background-repeat: repeat-x;border:solid 1px #000;}
+#wayfindheader #wayfindtoolcontainer .tool {color: #000;float:left;line-height:31px;padding-left:10px;padding-right:6px;background-image: url(../img/wayfair-toolsDivider.png);background-repeat: no-repeat;background-position: right top;display: block;}
+#wayfindheader #wayfindtoolcontainer ul {float: left;width:345px;}
+#wayfindheader #wayfindtoolcontainer ul li {float: left;width:38px;background-image: url(../img/wayfair-toolsDivider.png);background-repeat: no-repeat;background-position: right top;display: block;}
+#wayfindheader #wayfindtoolcontainer ul li a:hover{background-image: url(../img/wayfair-toolsHover.jpg);background-repeat: repeat-x;}
+#wayfindheader #wayfindtoolcontainer ul li img {margin-top:8px; margin-left:9px;}
+#wayfindheader #wayfindtoolcontainer ul li .crop {height: 31px;width: 38px;display: block;}
+#wayfindheader #wayfindtoolcontainer ul li .hilite {height: 31px;width: 38px;display: block;}
+#wayfindheader #wayfindtoolcontainer ul li .stickit {height: 31px;width: 38px;display: block;}
+#wayfindbody {width:980px;margin-right: auto;margin-left: auto;padding-top: 57px;}
+#onscreennote {position: relative;left: 460px;top: 225px;height: 27px;width: 30px;float: left;}
+#panel {display: none;width: 300px;}
+#chatbox {height: 375px;width: 300px;clear: both;background-color: #fff;border: 1px solid #cfcfcf;margin-right: auto;margin-left: auto;overflow: auto;}
+#chatbox #commentheader {background-color: #f8f8f8;height: 18px;width: 100%;}
+#chatbox #commentheader p {font-size: 93%;color: #353535;line-height: 18px;margin-left: 4px;float: left;}
+#chatbox #commentheader a {font-size: 93%;color: #000;line-height: 18px;text-decoration: none;float: right;margin-right: 4px;}
+#chatbox #timelinecomments {padding-right: 4px;padding-left: 4px;}
+#chatbox #timelinecomments .comment {border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #f3f3f3;padding-bottom: 3px;float:left;margin-top:5px;margin-bottom:8px;padding-bottom:5px;}
+#chatbox #timelinecomments .comment .avatar {float: left;margin-right:5px;}
+#chatbox #timelinecommentpanel #timelinecomments .comment .username {font-weight: bold;}
+#chatbox #timelinecomments .comment p {float: left;font-size: 92%;width:236px;margin-bottom:1px;}
+#chatbox #timelinecomments .comment p a {color: #0053b0;text-decoration: none;}
+#chatbox #timelinecomments .comment .bold {font-weight: bold;}
+#chatbox #timelinecomments .comment .postdate {color:#D1D1D1;float:right;font-size:77%;width:30%;margin-top:3px;}
+#onscreennote .noteholder .btn-slide {background-image: url(../img/wayfair-onpagenote.png);background-repeat: no-repeat;background-position: left top;display: block;height: 22px;width: 30px;}
+#onscreennote .noteholder .btn-slide .active {background-image: url(../img/wayfair-onpagenote.png);background-position: left bottom;}

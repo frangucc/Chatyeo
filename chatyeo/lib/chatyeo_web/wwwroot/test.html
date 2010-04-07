@@ -1,0 +1,320 @@
+<html>
+<head>
+<title>Nitrogen - [[[page:title()]]]</title>
+
+<script type="text/javascript" src="/json2.js"></script>
+<script src='/nitrogen/jquery.js' type='text/javascript' charset='utf-8'></script>
+<script src='/nitrogen/jquery-ui.js' type='text/javascript' charset='utf-8'></script>
+<script src='/nitrogen/livevalidation.js' type='text/javascript' charset='utf-8'></script>
+<script src='/nitrogen/nitrogen.js' type='text/javascript' charset='utf-8'></script>
+<script src='/js/jquery.mousewheel.min.js' type='text/javascript'></script>
+<script src='/js/jquery.em.js' type='text/javascript'></script>
+<script src='/js/jScrollPane.js' type='text/javascript'></script>
+<script type="text/javascript" src='/js/jquery.jsonSuggest.js'></script>
+<script type="text/javascript" src="/scripts/web_events.js"></script>
+<script type="text/javascript" src="/scripts/test.js"></script>
+<script type="text/javascript" src="/js/testData.js"></script>
+<link rel="stylesheet" href="/nitrogen/jquery-ui/jquery-ui.css" type="text/css" media="screen" charset="utf-8">
+<link rel="stylesheet" href="/css/reset.css" type="text/css" media="screen" charset="utf-8">
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" charset="utf-8">
+<link rel="stylesheet" href="/css/page.css" type="text/css" media="screen" charset="utf-8">
+<link rel="stylesheet" href="/nitrogen/elements.css" type="text/css" media="screen" charset="utf-8">
+<!--CSS resets-->
+<link href="/css/reset-fonts-grids.css" rel="stylesheet" type="text/css" />
+<!--universal style-->
+<link href="/css/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">			
+	$(function()
+	{
+  	// this initialises the demo scollpanes on the page.
+	  $('.scroll-pane').jScrollPane({animateTo: true});
+  
+	  reinitialiseScrollPane = function()
+	  {
+	    $('.scroll-pane').jScrollPane({animateTo: true});
+      $pane2[0].scrollTo($pane2.data('jScrollPaneMaxScroll'));
+	  }
+  });  			
+</script>
+
+<script type="text/javascript">
+// chatyeosearch javascript control 
+var timeout         = 500;
+var closetimer		= 0;
+var ddmenuitem      = 0;
+
+function jsddm_open()
+{	jsddm_canceltimer();
+	jsddm_close();
+	ddmenuitem = $(this).find('ul').eq(0).css('visibility', 'visible');}
+
+function jsddm_close()
+{	if(ddmenuitem) ddmenuitem.css('visibility', 'hidden');}
+
+function jsddm_timer()
+{	closetimer = window.setTimeout(jsddm_close, timeout);}
+
+function jsddm_canceltimer()
+{	if(closetimer)
+	{	window.clearTimeout(closetimer);
+		closetimer = null;}}
+
+$(document).ready(function()
+{	$('#categories > li').bind('mouseover', jsddm_open);
+	$('#categories > li').bind('mouseout',  jsddm_timer);});
+
+	document.onclick = jsddm_close;
+	// chatyeosearch dropdown selector
+	function ch(obj) {
+
+	    document.getElementById("active").innerHTML = obj.innerHTML;
+	    document.getElementById("active").className = obj.className;
+	}
+</script>
+</head>
+
+<body>
+<div id="headerwrapper">
+<div id="header">
+<div id="logo"><a href="javascript:;"><img src="/images/logo.png" alt="Chatyeo Logo" /><span class="hide">Chatyeo</span></a></div><!--end logo-->
+<div id="topnavbg">
+	<div id="topnav">
+    	<ul>
+        	<li><a href="javascript:;">My Chatyeo</a></li>
+        	<li><a href="javascript:;">Register</a></li>
+        	<li><a href="javascript:;">Help</a></li>
+        	<li><a href="javascript:;">Settings</a></li>            
+        </ul>
+    </div><!--end top nav-->
+</div>
+<!--end topnavBG-->
+</div><!--end top nav wrapper-->
+</div><!--end header-->
+<div id="contentwrapper">
+	<div id="primarynav">
+    	<div id="leftcorner"></div>
+        	<ul>
+            	<li><a class="pnav-what" href="javascript:;" alt="What's Chatyeo" title="What's Chatyeo">What's Chatyeo</a></li>
+                <li><a class="pnav-live" href="javascript:;" alt="Live Chatyeo" title="Live Chatyeo">Live Chatyeo</a></li>
+                <li><a class="pnav-pause" href="javascript:;" alt="Pause Chatyeo" title="Pause Chatyeo">Pause Chatyeo</a></li>
+                <li><a class="pnav-search" href="javascript:;" alt="Search Chatyeo" title="Search Chatyeo">Search Chatyeo</a></li>
+            </ul>
+            <div id="catdropdown">
+					<ul id="categories">
+   						 <li id="websearchbg"><a class="websearch" id="active" href="javascript:;">Web Search</a>
+        						<ul>
+        						    <li><a class="websearch" id="WebSearch" onclick="ch(this)" href="javascript:;">Web Search</a></li>
+           							<li><a class="news" id="News" onclick="ch(this)" href="javascript:;">News</a></li>
+            						<li><a class="pol" id="Politics" onclick="ch(this)" href="javascript:;">Politics</a></li>
+            						<li><a class="mus" id="Music" onclick="ch(this)" href="javascript:;">Music</a></li>
+            						<li><a class="shop" id="Shopping" onclick="ch(this)" href="javascript:;">Shopping</a></li>
+            						<li><a class="fin" id="Finance" onclick="ch(this)" href="javascript:;">Finance</a></li>
+        						</ul>
+    					</li>
+    					<li><input type="text" value="Search Conversations..." id="chatyeo_search" class="chatyeo_search_input" onfocus="javascript:takebgOff(this);" onblur="javascript:verifySelf1(this);" /></li>
+					</ul>
+            </div>
+        <div id="rightcorner"></div>
+    </div><!--end primarynav-->
+    	<div id="actionpane">
+        	<div id="popads">
+        		<p>You're discussing: <a href="javascript:;">machine learning,</a> <a href="javascript:;">algorithms,</a> <a href="javascript:;">supervised learning,</a> <a href="javascript:;">computational lingustics</a>...</p>
+        	</div><!--end popads-->
+           	<div id="timeline">
+            	<div id="slider-range"></div>
+            </div><!--end timeline-->
+            	<div id="filter">
+                	<ul id="sortablefilters">
+                    	<p>Filter By:</p>
+                        	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><a href="javascript:;" alt="Filter by Text Findings" title="Filter by Text Findings">Text Findings</a></li>
+                        	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><a href="javascript:;" alt="Filter by Images" title="Filter by Images">Images</a></li>
+                        	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><a href="javascript:;" alt="Filter by Books" title="Filter by Books">Books</a></li>
+                        	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><a href="javascript:;" alt="Filter by WayFair" title="Filter by WayFair">WayFair</a></li>
+                        	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><a href="javascript:;" alt="Filter by Twitter" title="Filter by Twitter">Twitter</a></li>
+                        	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><a href="javascript:;" alt="Filter by Sites" title="Filter by Sites">Sites</a></li>
+                        	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><a href="javascript:;" alt="Filter by Doc" title="Filter by Docs">Docs</a></li>
+                        	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><a href="javascript:;" alt="Filter by Video" title="Filter by Video">Video</a></li>
+                        	<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><a href="javascript:;" alt="Filter by Yahoo Answers" title="Filter by Yahoo Answers">Yahoo Answers</a></li>
+					</ul>     
+                </div>
+    	</div><!--end actionpane-->
+       		<div id="breadcrumbs">
+        	<div id="pastChatTimeline">
+			Computers
+		</div>
+		<div id="currentChatTimeline">
+			Games
+		</div>
+		<div id="futureChatTimeline">
+			Halo 3
+		</div>
+            </div><!--close breadcrumbs-->
+       <div id="displayresults">
+    <div id="col1">
+            	<div class="twitter-resultreturn">
+                	<a href="javascript:;">
+                		<img class="profileimg" src="/images/userimg-001.jpg"/>
+                        <p>Machine learning ad network scientist for SAAS. Visit TinyUrl.com/saspax</p>
+                	</a>
+                </div>
+                <div class="twitter-resultreturn">
+                	<a href="javascript:;">
+                		<img class="profileimg" src="/images/userimg-002.jpg"/>
+                        <p>Make twitter work for you by making it a Twitter Traffic Machine http://www.tinyurl.com/933493</p>
+                	</a>
+                </div>
+                <div class="twitter-resultreturn">
+                	<a href="javascript:;">
+                		<img class="profileimg" src="/images/userimg-001.jpg"/>
+                        <p>Machine learning rules and I will forever be involved in it.</p>
+                	</a>
+                </div>
+                <div class="twitter-resultreturn">
+                	<a href="javascript:;">
+                		<img class="profileimg" src="/images/userimg-003.jpg"/>
+                        <p>Machine learning ad network scientist for SAAS. Visit TinyUrl.com/saspax</p>
+                	</a>
+                </div>                
+            </div><!--end col1-->
+            <div id="col2">
+						<div class="text-resultreturn">
+                        	<h3>Paul Dix Hosts 2009 Semantic Meetup: Machine Learning</h3>
+                        	<p>Some parts of machine learning are closely related to data mining and statistics. Machine learning research is focused on computational properties of the statistical methods, such as their computational complexity...</p>
+                        </div><!--end TEXT result return-->
+                       <div class="text-resultreturn">
+                        	<h3>Henry Wikler gives talk at Semantic Meetup</h3>
+                        	<p>Hence, machine learning is closely related to fields such as statistics, pattern recognition, artificial... MLMTA Machine Learning: Models, Technologies & Applications. Much label classification. Neural Information Processing systems (NIPS).</p>
+              </div><!--end TEXT result return-->
+                       <div class="text-resultreturn">
+                        	<h3>ML Conference kickoff next week. Please attend...</h3>
+                        	<p>...of machine learning are closely related to data mining and statistics. Machine learning research is focused on computational properties of the statistical methods, such as their computational complexity...</p>
+                        </div><!--end TEXT result return-->                        
+            </div><!--end col2-->
+                            
+       		<div id="col3">
+                       <div class="wayfair-resultreturn">
+                        	<h3>Paul Dix Explains Nothing</h3>
+                            <img src="/images/user-assets/wayfairimg.jpg" />
+                            <div class="wayfaretitle"><img class="wayfinder-source-img" src="/images/wayfair-linkedin.jpg" /><h3>Paul Dix's Summary</h3></div>
+                            <p>For the last twelve years I have worked in IT filling positions as a software developer, tester, network engineer, and even as a PC technician. Since 2001 I have worked...</p>
+							<div class="wayfaretitle"><img class="wayfinder-source-img" src="/images/wayfair-vimeo.jpg" /><h3>Machine Learning Techniques for the Semantic Web - Paul Dix - The...</h3>
+							</div><p>An introduction to Machine Learning Techniques for the Semantic Web with Paul Dix. This is part of a presentation to the New York Semantic Web Meetup.</p>                            
+              </div><!--end TEXT result return-->  
+              <div class="image-resultreturn">
+              	<img src="/images/user-assets/machinelearning3.jpg" />
+              </div><!--end image result return-->
+              <div class="image-resultreturn">
+              	<img src="/images/user-assets/machinelearning2.jpg" />
+              </div><!--end image result return-->
+              <div class="image-resultreturn">
+              	<img src="/images/user-assets/machinelearning1.jpg" />
+              </div><!--end image result return-->              
+            </div><!--end col3-->
+       </div><!--end display results--> 
+
+<div class="holder">
+  
+  [[[page:render_chat()]]]
+  
+</div>
+[[[page:render_chat_textarea()]]]
+<!--end contentwrapper-->
+
+<div id="footer">
+    <div id="content_searchbox_div" style="display:none;">
+    <div id="content_searchbox">
+        <div class="content_searchbox_wrapper"><!-- start of convo message -->
+            <div class="content_searchbox_img"><img src="/images/spacer.gif" alt="" class="fin" /></div>
+            <div class="content_searchbox_message"><span class="message_username">Finance: </span>I’ve been a student at IIT for 6 years and am a huge fan of the IR pro...</div>
+            <div class="content_searchbox_popularity"><img src="/images/popularity_high.gif" alt="" /></div>
+        </div>
+        <div class="clear"></div><!-- end of convo message -->
+        <div class="content_searchbox_wrapper"><!-- start of convo message -->
+            <div class="content_searchbox_img"><img src="/images/spacer.gif" alt="" class="news" /></div>
+            <div class="content_searchbox_message"><span class="message_username">News: </span>I’ve been a student at IIT for 6 years and am a huge fan of the IR program th...</div>
+            <div class="content_searchbox_popularity"><img src="/images/popularity_high.gif" alt="" /></div>
+        </div>
+        <div class="clear"></div><!-- end of convo message -->
+        <div class="content_searchbox_wrapper"><!-- start of convo message -->
+            <div class="content_searchbox_img"><img src="/images/spacer.gif" alt="" class="shop" /></div>
+            <div class="content_searchbox_message"><span class="message_username">Shopping: </span>I’ve been a student at IIT for 6 years and am a huge fan of the IR pr...</div>
+            <div class="content_searchbox_popularity"><img src="/images/popularity_high.gif" alt="" /></div>
+        </div>
+        <div class="clear"></div><!-- end of convo message -->
+        <div class="content_searchbox_wrapper"><!-- start of convo message -->
+            <div class="content_searchbox_img"><img src="/images/spacer.gif" alt="" class="fin" /></div>
+            <div class="content_searchbox_message"><span class="message_username">Finance: </span>I’ve been a student at IIT for 6 years and am a huge fan of the IR pro...</div>
+            <div class="content_searchbox_popularity"><img src="/images/popularity_high.gif" alt="" /></div>
+        </div>
+        <div class="clear"></div><!-- end of convo message -->
+        <div class="content_searchbox_wrapper"><!-- start of convo message -->
+            <div class="content_searchbox_img"><img src="/images/spacer.gif" alt="" class="news" /></div>
+            <div class="content_searchbox_message"><span class="message_username">News: </span>I’ve been a student at IIT for 6 years and am a huge fan of the IR program th...</div>
+            <div class="content_searchbox_popularity"><img src="/images/popularity_high.gif" alt="" /></div>
+        </div>
+        <div class="clear"></div><!-- end of convo message -->
+        <div class="content_searchbox_wrapper"><!-- start of convo message -->
+            <div class="content_searchbox_img"><img src="/images/spacer.gif" alt="" class="pol" /></div>
+            <div class="content_searchbox_message"><span class="message_username">Politics: </span>I’ve been a student at IIT for 6 years and am a huge fan of the IR progr...</div>
+            <div class="content_searchbox_popularity"><img src="/images/popularity_average.gif" alt="" /></div>
+        </div>
+        <div class="clear"></div><!-- end of convo message -->
+        <div class="content_searchbox_wrapper"><!-- start of convo message -->
+            <div class="content_searchbox_img"><img src="/images/spacer.gif" alt="" class="news" /></div>
+            <div class="content_searchbox_message"><span class="message_username">News: </span>I’ve been a student at IIT for 6 years and am a huge fan of the IR program th...</div>
+            <div class="content_searchbox_popularity"><img src="/images/popularity_average.gif" alt="" /></div>
+        </div>
+        <div class="clear"></div><!-- end of convo message -->
+        <div class="content_searchbox_wrapper"><!-- start of convo message -->
+            <div class="content_searchbox_img"><img src="/images/spacer.gif" alt="" class="mus" /></div>
+            <div class="content_searchbox_message"><span class="message_username">Music: </span>I’ve been a student at IIT for 6 years and am a huge fan of the IR program th...</div>
+            <div class="content_searchbox_popularity"><img src="/images/popularity_low.gif" alt="" /></div>
+        </div>
+        <div class="clear"></div><!-- end of convo message -->
+         <div class="content_searchbox_wrapper"><!-- start of convo message -->
+            <div class="content_searchbox_img"><img src="/images/spacer.gif" alt="" class="mus" /></div>
+            <div class="content_searchbox_message"><span class="message_username">Music: </span>I’ve been a student at IIT for 6 years and am a huge fan of the IR program th...</div>
+            <div class="content_searchbox_popularity"><img src="/images/popularity_low.gif" alt="" /></div>
+        </div>
+        <div class="clear"></div><!-- end of convo message -->
+         <div class="content_searchbox_wrapper"><!-- start of convo message -->
+            <div class="content_searchbox_img"><img src="/images/spacer.gif" alt="" class="news" /></div>
+            <div class="content_searchbox_message"><span class="message_username">News: </span>I’ve been a student at IIT for 6 years and am a huge fan of the IR program th...</div>
+            <div class="content_searchbox_popularity"><img src="/images/popularity_low.gif" alt="" /></div>
+        </div>
+        <div class="clear"></div><!-- end of convo message -->
+    </div>
+    <div id="content_searchbox_input">
+    <div id="content_searchbox_input_text">Search Your Conversations</div>
+    <input type="text" id="Conversation_Search_Input" class="conversation_search_input" value="" />
+    </div>
+    </div>
+    <div id="preset_ui">
+        <div id="preset" class="clearfix">
+        	<div id="preset_left_bar">
+            	<div id="preset_conversations" class="preset_fields_left">
+                	<div class="preset_link" onclick="triggerConversations();"><img src="/images/preset_img.jpg" alt="" /> Conversations</div>
+                 </div>
+                <!--<div class="preset_fields_left">
+                	<div class="preset_link">Past Chats</div>
+                </div>-->
+            </div>
+            <div id="preset_right_bar">
+            	<div class="preset_fields_right">&nbsp;</div>
+            	<div class="preset_fields_right">&nbsp;</div>
+                <div class="preset_fields_right">
+                	<div class="preset_link"><img src="/images/onlineFriends.png" alt="" />Online Friends (0)</div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+[[[script]]]
+</script>
+
+
+</body>
+</html>

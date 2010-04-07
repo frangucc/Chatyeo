@@ -1,0 +1,98 @@
+Install the following libraries:
+
+% sudo apt-get install git-core erlang libpam0g-dev make libexpat1-dev zlib1g-dev libssl-dev automake libtool bison libmysqlclient16-dev lib64ncurses5-dev build-essential mono-2.0-devel libboost-dev ruby1.8-dev sun-java6-jdk ant pkg-config flex libmozjs-dev libcurl4-openssl-dev subversion mono-devel ejabberd openjdk-6-jre lamp-server^
+
+
+
+*Note: Use temp4now as mysql server root password
+ 
+edit ~/.bashrc (both root and chatyeo user)
+export PATH=$PATH:/usr/local/erlware/bin
+export ERL_LIBS=/opt/erlang-libs/:/usr/lib/erlang/lib/:/usr/local/erlware/lib/
+
+source ~/.bashrc 
+
+% wget http://faxien.googlecode.com/files/faxien-launcher-universal-0.3.4.py
+% sudo python faxien-launcher-universal-0.3.4.py
+(accept defaults, say (n)ew when asking about config files)
+
+
+Become chatyeo(or some other local user): 
+
+Download chatyeo files
+
+Now run the code:
+
+% cd defyned/scripts
+% sudo ./setup_node
+% ./setup_dbs
+% ./setup_users
+
+Do the following each time you change the chatyeo code
+
+% ./deploy_chatyeo
+% chatyeo
+
+Extra notes:
+
+To view ejabberd admin page: http://localhost:5280/admin
+(use chatyeo@localhost as user and temp4now as password)
+
+***************
+IMPORTANT NOTES
+***************
+
+
+**For new mysql may need to edit my.cnf and get rid of skip-federated option
+vim /etc/mysql/my.cnf
+
+may also need to mv /usr/local/share/mysql /usr/share/
+
+**You may need to modify /etc/ld.so.conf if indexer gives link errors when starting:
+
+emacs /etc/ld.so.conf
+--
+
+include /etc/ld.so.conf.d/*.conf 
+/usr/local/lib/mysql
+
+
+**To reindex sphinx run:
+indexer --rotate messages
+
+
+** to get nltk working:
+
+sudo apt-get install python-numpy python-matplotlib prover9
+wget http://nltk.googlecode.com/files/nltk-2.0b5.zip
+unzip nltk-2.0b5.zip
+cd nltk-2.0b5/ 
+sudo python setup.py install
+
+** to download nltk data (by default installed in ~/nltk_data)
+
+python
+>>> import nltk
+>>> nltk.download()
+
+
+** cron job for sphinx
+sudo cp scripts/update_sphinx /etc/cron.d/
+
+test2
+
+
+** For hbase and thrift
+
+http://kungfooguru.wordpress.com/2009/08/31/erlang-thrift-and-hbase/
+
+for thrift:
+sudo apt-get install ruby1.8-dev
+
+for hbase:
+make sure you are using :
+update-java-alternatives -s java-6-sun
+
+cd ~/Desktop/hbase-0.19.3
+./bin/hbase thrift start &
+

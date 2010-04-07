@@ -1,0 +1,12 @@
+#!/bin/sh
+
+echo Setting up Mnesia database..
+sudo mkdir -p /opt/chatyeo/db
+sudo chown -R $USER /opt/chatyeo/db
+erl -mnesia dir '"/opt/chatyeo/db"' \
+  -noshell -eval "mnesia:create_schema([node()])" -s erlang halt
+
+echo Setting up MySQL databases..
+
+mysql -u root -ptemp4now < create_mysql_db_and_user
+mysql -u chatyeo -ptemp4now < create_mysql_tables

@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/* CSS Document */
+#timelinepanel {width:100%;height:125px;background-color:#000;}
+#timelinepanel #loading {height: 14px;width: 100%;}
+#timelinepanel .col {float: left;margin-right:2px;}
+#timelinepanel .col .small a{font-size:83%;color:#000;text-decoration:none;display:block;text-align:center;}
+#timelinepanel .col .small2 a{font-size:83%;color:#000;text-decoration:none;display:block;text-align:center;}
+#timelinepanel .col .medium a{font-size:123.1%;color:#000;text-decoration:none;display:block;text-align:center;}
+#timelinepanel .col .big a{font-size:197%;color:#fff;text-decoration:none;display:block;text-align:center;}
+#timelinepanel #col1 {margin-top:17px;}
+#timelinepanel #col1 .small {background-color: #f2f2f2;height: 24px;padding-left:5px;padding-right:5px; line-height:24px;margin-left:21px;float:left;}
+#timelinepanel #col1 .medium {background-color: #d6d6d6;height: 32px;padding-left:5px;padding-right:5px; line-height:32px;margin-left:67px;float:left;clear:both;}
+#timelinepanel #col2 .big {background-color: #f900c9;height: 45px;width:138px;margin-bottom:2px;padding-left:5px;padding-right:5px;line-height:45px;float:left;border:3px solid #fff;background-image: url(img/timelpanelarrow.png);background-repeat: no-repeat;background-position: 136px 37px;}
+#timelinepanel #col2 .small {background-color: #f2f2f2;height: 24px;margin-bottom:2px;padding-left:5px;padding-right:5px; line-height:24px;float:left;clear:both;}
+#timelinepanel #col2 .small2 {background-color: #f2f2f2;height: 24px;padding-left:5px;padding-right:5px; line-height:24px;margin-left:21px;float:left;clear:both;}
+#timelinepanel #col3 {margin-top:8px;}
+#timelinepanel #col3 .small {background-color: #f2f2f2;height: 24px;margin-bottom:2px;padding-left:5px;padding-right:5px; margin-left:16px;line-height:24px;float:left;clear:both;}
+#timelinepanel #col3 .medium {background-color: #d6d6d6;height: 28px;margin-bottom:2px;padding-left:10px;padding-right:10px; line-height:26px;float:left;clear:both;border:3px solid #fff;background-image: url(img/timelpanelarrow.png);background-repeat: no-repeat;background-position: 134px 20px;}
+#timelinepanel #col4 .medium {background-color: #d6d6d6;height: 26px;margin-bottom:2px;padding:5px;padding-right:5px; line-height:26px;float:left;clear:both;}
+#timelinepanel #col4 .big {background-color: #f900c9;height: 45px;padding-left:5px;padding-right:5px; line-height:45px;float:left;clear:both;}
+#timelinepanel #col5 .small {background-color: #f2f2f2;height: 24px;margin-bottom:2px;padding-left:5px;padding-right:5px; line-height:24px;float:left;}
+#timelinepanel #col5 .small2 {background-color: #f2f2f2;height: 24px;margin-bottom:2px;padding-left:5px;padding-right:5px; line-height:24px;float:left;clear:both;}
+#timelinepanel #col5 .medium {background-color: #d6d6d6;height: 32px;padding-left:5px;padding-right:5px; line-height:32px;float:left;clear:both;}
+#timelinecommentpanel {height: 375px;width: 300px;clear: both;background-color: #fff;border: 1px solid #cfcfcf;margin-right: auto;margin-left: auto;overflow: auto;}
+#timelinecommentpanel #commentheader {background-color: #f8f8f8;height: 18px;width: 100%;}
+#timelinecommentpanel #commentheader p {font-size: 93%;color: #353535;line-height: 18px;margin-left: 4px;float: left;}
+#timelinecommentpanel #commentheader a {font-size: 93%;color: #000;line-height: 18px;	text-decoration: none;float: right;margin-right: 4px;}
+#timelinecommentpanel #timelinecomments {padding-right: 4px;padding-left: 4px;}
+#timelinecommentpanel #timelinecomments .comment {border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #f3f3f3;padding-bottom: 3px;float:left;margin-top:5px;margin-bottom:8px;padding-bottom:5px;}
+#timelinecomments .comment .avatar {float: left;margin-right:5px;}
+#timelinepanel #timelinecommentpanel #timelinecomments .comment .username {font-weight: bold;}
+#timelinecomments .comment p {float: left;font-size: 92%;width:236px;margin-bottom:1px;}
+#timelinecommentpanel #timelinecomments .comment p a {color: #0053b0;text-decoration: none;}
+#timelinecomments .comment .bold {font-weight: bold;}
+#timelinecomments .comment .postdate {color:#D1D1D1;float:right;font-size:77%;width:30%;margin-top:3px;}

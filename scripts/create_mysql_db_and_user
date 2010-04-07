@@ -1,0 +1,4 @@
+create database chatyeo;
+
+CREATE USER 'chatyeo'@'localhost' IDENTIFIED BY 'temp4now';
+GRANT ALL PRIVILEGES ON chatyeo.* TO 'chatyeo'@'localhost' WITH GRANT OPTION;

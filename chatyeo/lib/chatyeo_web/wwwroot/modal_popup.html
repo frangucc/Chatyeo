@@ -1,0 +1,101 @@
+<div id="modal_popup">
+	<div id="modal_popup_Div1">
+	<div id="modal_popup_Div1_top">
+		<div id="modal_popup_Dyna_Content">
+		<h3>Meeporium</h3>
+		<p>Meep meep meep. Meep meep :D</p>
+		</div><!-- end of the content loader div -->
+	<div id="modal_popup_links">
+		<ul>
+		<li id="tackThisLnk">&nbsp;</li>
+		<li id="mailThisLnk">&nbsp;</li>
+		<li id="heartThisLnk">&nbsp;</li>
+		<li id="questionThisLnk">&nbsp;</li>
+		</ul>
+	</div>
+	</div>
+	<div id="mailThisContent">
+	<h3>Email This Conversation</h3>
+		<input type="text" name="toEmail" id="toEmail"  value="" />
+		<textarea name="toMessage" id="toMessage" cols="20" rows="4" ></textarea>
+		<input type="submit" id="sendMessage" name="sendMessage" value="send email" />
+	</div>
+	</div><!-- end of main div1 content and links -->
+	<div id="modal_popup_mainWindowWrapper">
+		<div id="mainwindow">
+		<div id="close_btn_wrapper"><a onclick="leavePopUpChat();" id="close_link">close</a></div>
+			<ul id="tab-nav">
+				<li><a href="#contentPreview">Content Preview</a></li>
+				<li><a href="#wayFairFindings">WayFair Findings</a></li>
+				<li><a href="#linkMesh">Link Mesh</a></li>
+			</ul><!-- end of tabs -->
+			<div class="clear"></div>
+			<div id="contentPreview">
+				<div id="contentDiv1"></div>
+				<a href="javascript:;" class="readmore_lnk">continue</a>
+				<a href="javascript:;" class="browseContent">Browse This Content Using WayFair</a>
+			</div>
+			<div id="wayFairFindings">
+				<a href="javascript:;" class="readmore_lnk">continue</a>
+				<a href="javascript:;" class="browseContent">Browse This Content Using WayFair</a>
+			</div>
+			<div id="linkMesh">
+				<a href="javascript:;" class="link1">Sex on Fire</a>
+				<a href="javascript:;" class="link3">pop</a>
+				<a href="javascript:;" class="link2">stuff</a>
+				<a href="javascript:;" class="link1">Chicago</a>
+				<a href="javascript:;" class="link1">Lollapalooza</a>
+			</div>
+		</div><!-- end of mainwindow -->
+		<div class="holder2">
+			<div id="pane2">
+			</div>
+      <textarea id="modal_message_textarea_input" class="modal_message_textarea_input" cols="50" rows="3"></textarea>
+		</div>
+	</div>
+</div>
+
+<!-- end of html -->
+<script type="text/javascript">
+// jquery js functions
+$(function() {
+		//mail this link js code
+		$("#mailThisLnk").toggle(
+			function() {
+				$("#mailThisContent").animate({ height: "190px" }, 1000);
+				$("#mailThisContent h3").show();
+				$("#mailThisContent #ToEmail").show();
+				$("#mailThisContent #ToMessage").show();
+				$("#mailThisContent #sendMessage").show();
+			},
+			function() {
+				$("#mailThisContent").animate({ height: "0px" }, 1000);
+				$("#mailThisContent h3").hide();
+				$("#mailThisContent #ToEmail").hide();
+				$("#mailThisContent #ToMessage").hide();
+				$("#mailThisContent #sendMessage").hide();
+			}
+		);
+		// scrollpane js code
+		//$('#pane2').jScrollPane({ showArrows: true, scrollbarWidth: 20 });
+		//modal popup tabbing js code
+		$("#mainwindow").tabs({ fx: { opacity: 'toggle' } });
+
+
+	});
+
+$("#modal_message_textarea_input").keypress(function(e) {
+    if(e.which==13 || e.which==10) {
+        if($("#modal_message_textarea_input").val()!="") {
+            popupAddChat($("#modal_message_textarea_input").val());
+            $("#modal_message_textarea_input").val("");	
+            return false;
+        }		
+    }
+    return true;
+});
+	
+$('#close_link').click(function() {
+  $(document).trigger('close.facebox');
+});
+</script>

@@ -1,0 +1,225 @@
+#!/bin/bash
+
+## We assume for now erlang(and xmerl) is already installed
+
+CWD=`pwd`
+
+## Make sure user has root perms
+
+ROOT_UID=0     # Only users with $UID 0 have root privileges.
+E_NOTROOT=67   # Non-root exit error.
+
+if [ $UID -ne $ROOT_UID ]
+then
+        echo "Must be root to run this script. Try sudo ./setup_node"
+        exit $E_NOTROOT
+fi
+
+## Install ejabberd
+
+if [ -d /opt/erlang-libs/ejabberd ]; then
+	echo "ejabberd already installed"
+else 
+	echo "Installing ejabberd version 2.05"
+  mkdir -p /opt/erlang-libs
+  cd /opt/erlang-libs
+  wget http://www.process-one.net/downloads/ejabberd/2.0.5/ejabberd-2.0.5.tar.gz
+  tar zxvf ejabberd-2.0.5.tar.gz
+  ln -sf ejabberd-2.0.5 ejabberd
+  cd ejabberd/src
+  ./configure
+  make
+  make install
+  cd $CWD
+fi
+
+## Install nitrogen
+
+if [ -d /opt/erlang-libs/nitrogen ]; then
+	echo "Nitrogen already installed"
+else 
+	echo "Installing Nitrogen from github"
+  mkdir -p /opt/erlang-libs/
+  cd /opt/erlang-libs/
+  git clone git://github.com/diginux/nitrogen.git
+  cd nitrogen
+  make
+  cd $CWD
+fi
+
+## Install yaws
+
+if [ -d /opt/erlang-libs/yaws ]; then
+	echo "Yaws already installed"
+else 
+	echo "Installing Yaws version 1.77"
+  mkdir -p /opt/erlang-libs
+  cd /opt/erlang-libs
+  wget http://yaws.hyber.org/download/yaws-1.77.tar.gz
+  tar zxvf yaws-1.77.tar.gz
+  cd yaws
+  ./configure
+  make
+  cd $CWD
+fi
+
+## Install exmpp
+
+if [ -d /opt/erlang-libs/exmpp ]; then
+	echo "exmpp already installed"
+else 
+	echo "Installing exmpp version 0.9.1-r848"
+  mkdir -p /opt/erlang-libs
+  cd /opt/erlang-libs
+  wget http://download.process-one.net/exmpp/exmpp-0.9.1-r848.tar.gz
+  tar zxvf exmpp-0.9.1-r848.tar.gz
+  ln -sf exmpp-0.9.1-r848  exmpp
+  cd exmpp
+  ./configure
+  make
+  make install
+  cd $CWD
+fi
+
+## Install MySQL with Sphinx
+
+if [ -d /opt/chatyeo-extra/mysql ]; then
+	echo "MySQL with Sphinx already installed"
+else 
+	echo "Installing MySQL version 5.1.37 with Sphinx version 0.9.8.1"
+  mkdir -p /opt/chatyeo-extra/mysql
+  cd /opt/chatyeo-extra/mysql
+  wget -c http://dev.mysql.com/get/Downloads/MySQL-5.4/mysql-5.4.1-beta.tar.gz/from/http://mirror.services.wisc.edu/mysql/
+  tar zxvf mysql-5.4.1-beta.tar.gz
+  cd mysql-5.4.1-beta/storage/
+  wget http://www.sphinxsearch.com/downloads/sphinx-0.9.8.1.tar.gz
+  tar zxvf sphinx-0.9.8.1.tar.gz
+  mv sphinx-0.9.8.1/mysqlse/ sphinx
+  cd sphinx-0.9.8.1
+  ./configure
+  make
+  make install
+  cd ..
+  wget http://www.innodb.com/download/innodb_plugin/innodb_plugin-1.0.4.tar.gz
+  tar zxvf innodb_plugin-1.0.4.tar.gz
+  rm -fr innobase
+  mv innodb_plugin-1.0.4 innobase
+  cd ..
+  sh BUILD/autorun.sh
+  ./configure --with-plugins=innobase,sphinx
+  make
+  sudo make install
+  cd $CWD
+fi
+
+## Install cyc.dat
+
+if diff ../data/cyc.dat /opt/chatyeo/data/cyc.dat &> /dev/null ; then
+    echo cyc.dat already installed
+else
+    echo Installing /opt/chatyeo/data/cyc.dat
+    mkdir -p /opt/chatyeo/data/
+    cp ../data/cyc.dat /opt/chatyeo/data/
+fi
+
+## Install link-data
+
+if [ -d /opt/chatyeo/data/link-data ]; then
+	echo "link-data already installed"
+else 
+	echo "Installing link-data"
+  cp -R ../utils/link-4.1b/data /opt/chatyeo/data/link-data
+fi
+
+## Install lucene utils
+
+if [ -d /opt/chatyeo/utils/lucene ]; then
+	echo "Lucene utils already installed"
+else 
+	echo "Installing Lucene utils"
+  mkdir -p /opt/chatyeo/utils/lucene/
+  cd ../utils/lucene
+  make
+  cp -R classes lib /opt/chatyeo/utils/lucene/
+  cd -
+fi
+
+## Install topic detector utils
+
+if [ -d /opt/chatyeo/utils/lucene ]; then
+	echo "Topic Detector utils already installed"
+else 
+	echo "Installing Topic Detector utils"
+  mkdir -p /opt/chatyeo/utils/lucene/
+  cd ../utils/topic_detector
+  make
+  cp -R classes lib models /opt/chatyeo/utils/topic_detector/
+  cd -
+fi
+
+## Set perms for /opt/chatyeo and /opt/erlang-libs
+
+chmod -R 755 /opt/chatyeo
+chmod -R 755 /opt/erlang-libs
+
+## Install ejabberd.cfg
+
+if diff ../configs/ejabberd.cfg /etc/ejabberd/ejabberd.cfg &> /dev/null ; then
+    echo ejabberd.cfg already installed
+else
+    echo Installing /etc/ejabberd/ejabberd.cfg
+    mkdir -p /etc/ejabberd/
+    cp ../configs/ejabberd.cfg /etc/ejabberd/
+    echo Restarting ejabberd
+    ejabberdctl stop &> /dev/null
+    sleep 2
+fi
+
+## Install sphinx.conf
+
+if diff ../configs/sphinx.conf /usr/local/etc/sphinx.conf &> /dev/null ; then
+    echo sphinx.conf already installed
+else
+    echo Installing /usr/local/etc/sphinx.conf
+    cp ../configs/sphinx.conf /usr/local/etc/
+    echo Restarting MySQL/Sphinx
+    /etc/init.d/mysqld stop
+    /usr/local/bin/mysqld_safe &
+    searchd
+    indexer messages
+    ejabberdctl stop &> /dev/null
+    sleep 2
+fi
+
+## Make sure ejabberd is started and users are added
+
+ejabberdctl start &> /dev/null
+
+# Setup required apps for chatyeo
+
+echo Installing required apps for chatyeo
+
+echo Installing exmpp app
+
+/usr/local/erlware/bin/faxien ia /usr/lib/erlang/lib/exmpp-0.9.1
+
+echo Installing crypto app
+
+/usr/local/erlware/bin/faxien ia crypto 1.5.3
+
+echo Installing mysql app
+
+/usr/local/erlware/bin/faxien ia mysql
+
+echo Installing ssl app
+
+/usr/local/erlware/bin/faxien ia ssl
+
+echo Installing workarounds for ssl
+
+ln -sf /usr/lib/libssl.so /usr/lib/libssl.so.4
+ln -sf /usr/lib/libcrypto.so /usr/lib/libcrypto.so.4
+
+echo Installing sinan
+
+/usr/local/erlware/bin/faxien ir sinan

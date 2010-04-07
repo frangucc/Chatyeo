@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svnroot/wikipedia-miner/!svn/ver/20/trunk/models
+END
+linkDetect.model
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/wikipedia-miner/!svn/ver/20/trunk/models/linkDetect.model
+END
+disambig.model
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/wikipedia-miner/!svn/ver/20/trunk/models/disambig.model
+END

@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Module jabber_proxy</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css" title="EDoc">
+</head>
+<body bgcolor="white">
+<div class="navbar"><a name="#navbar_top"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<hr>
+
+<h1>Module jabber_proxy</h1>
+<ul class="index"><li><a href="#index">Function Index</a></li><li><a href="#functions">Function Details</a></li></ul>
+
+<p><b>Behaviours:</b> <a href="gen_server.html"><tt>gen_server</tt></a>.</p>
+
+<h2><a name="index">Function Index</a></h2>
+<table width="100%" border="1" cellspacing="0" cellpadding="2" summary="function index"><tr><td valign="top"><a href="#code_change-3">code_change/3</a></td><td></td></tr>
+<tr><td valign="top"><a href="#create_room-2">create_room/2</a></td><td></td></tr>
+<tr><td valign="top"><a href="#handle_call-3">handle_call/3</a></td><td></td></tr>
+<tr><td valign="top"><a href="#handle_cast-2">handle_cast/2</a></td><td></td></tr>
+<tr><td valign="top"><a href="#handle_info-2">handle_info/2</a></td><td></td></tr>
+<tr><td valign="top"><a href="#init-1">init/1</a></td><td></td></tr>
+<tr><td valign="top"><a href="#leave_room-2">leave_room/2</a></td><td></td></tr>
+<tr><td valign="top"><a href="#login-1">login/1</a></td><td></td></tr>
+<tr><td valign="top"><a href="#logout-1">logout/1</a></td><td></td></tr>
+<tr><td valign="top"><a href="#move_reader_to_room-2">move_reader_to_room/2</a></td><td></td></tr>
+<tr><td valign="top"><a href="#move_user_to_room-2">move_user_to_room/2</a></td><td></td></tr>
+<tr><td valign="top"><a href="#register_user-3">register_user/3</a></td><td></td></tr>
+<tr><td valign="top"><a href="#send_message-3">send_message/3</a></td><td></td></tr>
+<tr><td valign="top"><a href="#start_link-1">start_link/1</a></td><td></td></tr>
+<tr><td valign="top"><a href="#start_link-3">start_link/3</a></td><td></td></tr>
+<tr><td valign="top"><a href="#terminate-2">terminate/2</a></td><td></td></tr>
+<tr><td valign="top"><a href="#update_user_pid-2">update_user_pid/2</a></td><td></td></tr>
+</table>
+
+<h2><a name="functions">Function Details</a></h2>
+
+<h3 class="function"><a name="code_change-3">code_change/3</a></h3>
+<div class="spec">
+<p><tt>code_change(OldVsn, State, Extra) -&gt; any()</tt></p>
+</div>
+
+<h3 class="function"><a name="create_room-2">create_room/2</a></h3>
+<div class="spec">
+<p><tt>create_room(Server, Room) -&gt; any()</tt></p>
+</div>
+
+<h3 class="function"><a name="handle_call-3">handle_call/3</a></h3>
+<div class="spec">
+<p><tt>handle_call(Request, From, State) -&gt; any()</tt></p>
+</div>
+
+<h3 class="function"><a name="handle_cast-2">handle_cast/2</a></h3>
+<div class="spec">
+<p><tt>handle_cast(Msg, State) -&gt; any()</tt></p>
+</div>
+
+<h3 class="function"><a name="handle_info-2">handle_info/2</a></h3>
+<div class="spec">
+<p><tt>handle_info(Received_packet, State) -&gt; any()</tt></p>
+</div>
+
+<h3 class="function"><a name="init-1">init/1</a></h3>
+<div class="spec">
+<p><tt>init(X1) -&gt; any()</tt></p>
+</div>
+
+<h3 class="function"><a name="leave_room-2">leave_room/2</a></h3>
+<div class="spec">
+<p><tt>leave_room(Server, Room) -&gt; any()</tt></p>
+</div>
+
+<h3 class="function"><a name="login-1">login/1</a></h3>
+<div class="spec">
+<p><tt>login(Server) -&gt; any()</tt></p>
+</div>
+
+<h3 class="function"><a name="logout-1">logout/1</a></h3>
+<div class="spec">
+<p><tt>logout(Server) -&gt; any()</tt></p>
+</div>
+
+<h3 class="function"><a name="move_reader_to_room-2">move_reader_to_room/2</a></h3>
+<div class="spec">
+<p><tt>move_reader_to_room(Server, Room) -&gt; any()</tt></p>
+</div>
+
+<h3 class="function"><a name="move_user_to_room-2">move_user_to_room/2</a></h3>
+<div class="spec">
+<p><tt>move_user_to_room(Server, Room) -&gt; any()</tt></p>
+</div>
+
+<h3 class="function"><a name="register_user-3">register_user/3</a></h3>
+<div class="spec">
+<p><tt>register_user(Server, Username, Password) -&gt; any()</tt></p>
+</div>
+
+<h3 class="function"><a name="send_message-3">send_message/3</a></h3>
+<div class="spec">
+<p><tt>send_message(Server, To, Message) -&gt; any()</tt></p>
+</div>
+
+<h3 class="function"><a name="start_link-1">start_link/1</a></h3>
+<div class="spec">
+<p><tt>start_link(Server) -&gt; any()</tt></p>
+</div>
+
+<h3 class="function"><a name="start_link-3">start_link/3</a></h3>
+<div class="spec">
+<p><tt>start_link(Server, Username, Password) -&gt; any()</tt></p>
+</div>
+
+<h3 class="function"><a name="terminate-2">terminate/2</a></h3>
+<div class="spec">
+<p><tt>terminate(Reason, State) -&gt; any()</tt></p>
+</div>
+
+<h3 class="function"><a name="update_user_pid-2">update_user_pid/2</a></h3>
+<div class="spec">
+<p><tt>update_user_pid(Server, Pid) -&gt; any()</tt></p>
+</div>
+<hr>
+
+<div class="navbar"><a name="#navbar_bottom"></a><table width="100%" border="0" cellspacing="0" cellpadding="2" summary="navigation bar"><tr><td><a href="overview-summary.html" target="overviewFrame">Overview</a></td><td><a href="http://www.erlang.org/"><img src="erlang.png" align="right" border="0" alt="erlang logo"></a></td></tr></table></div>
+<p><i>Generated by EDoc, Jun 30 2009, 10:32:45.</i></p>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!-- this is the timeline template. The rest of the cloud tags get generated through a javascript -->
+<div id="timelinePanel">
+<div id="timelinePanelLoading"><span id="loadingText">Loading </span><span id="loadingBar"></span></div>
+<div id="timelinePanelCloseBtn"><img src="/images/close_btn_img.png" alt="" /></div>
+<div class="clear"></div>
+<div id="timelineTagCloud">
+</div>
+<div class="clear"></div>
+<div id="timelinePanelStartTime">May 1, 2009</div>
+<div id="timelinePanelEndTime">September 1,2009</div>
+</div>
+
+<script type="text/javascript">
+//This will close the timeline dropdown
+$('#timelinePanelCloseBtn img').click(function() {
+          $('#timelinePanel').animate({height:"0px" }, 500);
+          $('#timelinePanelLoading').hide();
+	  $('#timelinePanelCloseBtn').hide();
+	  $('#timelineTagCloud').hide();
+	  $('#timelinePanelStartTime').hide();
+	  $('#timelinePanelEndTime').hide();
+});
+
+</script>

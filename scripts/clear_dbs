@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo rm -fr /opt/chatyeo/db
+mysql -u root -ptemp4now < clear_mysql_db_and_user &> /dev/null
+

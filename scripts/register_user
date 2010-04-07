@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo Starting Nitrogen.
+erl \
+  -noshell \
+  -pa ./utils \
+  -pa ./chatyeo/_build/development/apps/chatyeo-0.1.0/ebin \
+  -eval "register_user:run (\"$1\", \"$2\")" \
+  -s erlang halt
+  

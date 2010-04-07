@@ -1,0 +1,3 @@
+{application,chatyeo}.
+{packages,['lib.chatyeo.src']}.
+{modules,[]}.

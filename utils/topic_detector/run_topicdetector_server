@@ -1,0 +1,17 @@
+#!/bin/bash
+
+EXPECTED_ARGS=0
+E_BADARGS=65
+
+if [ $# -ne $EXPECTED_ARGS ]
+then
+  echo "Usage: `basename $0`"
+  exit $E_BADARGS
+fi
+
+TD_DIR=/opt/chatyeo/utils/topic_detector
+
+export CLASSPATH=$TD_DIR/classes/
+for file in $TD_DIR/lib/*.jar; do export CLASSPATH=$file:$CLASSPATH; done
+
+java -Xmx1500m TopicDetectorServer 192.168.1.200:3306 wikipedia wikiuser temp4now

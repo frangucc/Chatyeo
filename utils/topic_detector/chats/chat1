@@ -1,0 +1,414 @@
+kashmir by led zeppelin is the best song ever. 
+led zeppelin is amazing.
+yes they are.
+8:29 AM me: hey
+  got your email
+ gershon: k
+ me: let's start with number 2 for now
+8:30 AM and we can focus on 1 and 3, 4 when we complete our series A
+ gershon: k
+ me: i have some ideas on how we can do that
+  you know, i was looking at google base
+ gershon: yeah
+8:31 AM me: and the shopping engines apis, etc.
+ gershon: there are a lot of APIs out there
+ me: and I think a big part of the vision that we need to figure out at this point
+  is where all the data in each vertical will come from
+  also
+8:32 AM gershon: k
+ me: at a high level
+8:33 AM I think we'll want to identify all the NN capabilities of the site soon and document them
+ gershon: Yeah, I can write up the possibilites
+ me: also, there is an API we'll need to worry about
+8:34 AM so that we can easily create a single point of access for Mobile APS
+  and for a developer network
+ gershon: You mean our API
+ me: yeah
+  you see
+ gershon: hmm...
+ me: if we think about these things, we can hire people accordingly
+8:35 AM gershon: right
+  We get an idea-structure of the software, and then turn it into a people-structure
+ me: right
+8:36 AM gershon: There are ways we could go for implementing unlimited APIs
+8:37 AM We could really systematize implementing the APIs, but I think we still want a limited number of result types
+ me: here's the thing
+8:38 AM we are building the brain of the borg
+  like you said it
+  an AI system it is
+  a big part of strategy now is
+  looking at the various things people look for and do on the web or in chat
+8:39 AM so that we can provide the necessary tools, so that people don't have to ever leave chatyeo
+  chatyeo in many ways, is the web
+  only inside out
+  rather than a bunch of jargon and then links so people can leave and see an article or picture
+ gershon: So, basically, we need to take everything people do on the web, and ask how will people do this on chatyeo?
+8:40 AM me: we bring all that stuff to the surface and let them discuss it right there, like an examaning station
+  yeah
+  for example
+  if I'm in a chat, discussing vacationing
+  and where I should take my family
+  i'll probably want a map, listing of hotels and reviews
+8:41 AM if I'm talking about soccer, I'll probably want to see players, schedules and sports news
+  the good news is, someone has do ne the hardwork for us
+  ie. created google maps
+  ie. created yelp
+8:42 AM gershon: right there are even NLP systems for parsing voice about travel reservations
+ me: ie. created reuters
+ gershon: I wonder if we can leverage that kind of stuff
+ me: in the future
+  we'll talk about that next
+  but, the bad news is
+8:43 AM there is a TON of work in store for us just to cover these areas and correctly implement each API and further mashup data
+  I can't trust interns
+  to look at this
+  it's a huge mental jog
+ gershon: right, we can further systematize the API implementation process
+ me: i want to begin designing all of the verticals
+8:44 AM and their members' respective features and metadata combinations
+  google base offers housing, jobs, events and products
+ gershon: right
+8:45 AM and we can integrate the same thing with yahoo and other apis
+ me: freebase provides a sort-of governance to all that and it's own data
+  what is the relationship?
+ gershon: The tricky part is if you implement from two different APIs, they sometimes have similar but not quite the same data
+ me: what is the relationship between the wikfiyer algortihm and what freebase can provide
+  and can we be a step ahead of the game and prove concept before implmentation
+8:46 AM gershon: Freebase is more about how much topics are related. The wikifier stuff just more or less takes the topics from the text
+ me: that's why you have to have a clear understanding of what you are expecting out of the combination and then you work to manually validate
+ gershon: right
+ me: freebase is also a unique database
+  with good info
+  like, who were all the case of SNL
+  and what were each of their ages
+8:47 AM it's in relational data structure form
+ gershon: right, there >1000 tables
+ me: really?
+  thats' it so far?
+ gershon: That is quite a lot of tables
+8:48 AM Each table has lots of columns
+ me: oh
+ gershon: It has structure for lots of types of data
+8:52 AM me: I'm wondering if it is too complicated
+  and whether it will ever gain massive tracktion
+  it seems that all these amazing sites
+  lack interactivity with their users
+  same old social networking and forum like commenting systems
+8:53 AM gershon: Wikipedia is the mothership of a lot of these
+ me: imagine a day in the life at chatyeo, you browse the web, chatyeo knows everything you look at, you post questions or comments in places your interested, chatyeo updates you when those conversations pick-up
+ gershon: Could wikipedia be on the left side, with the popup a wikipedia editor
+8:54 AM me: yeah
+  i've thought of a full features browser
+  that's where WayFind comes in
+  but there are other ways to implmenet a larger view of the data being discussed
+  pdf viewers, etc
+8:55 AM gershon: The thing about wikipedia is you can EDIT the data not just read or comment on it
+ me: i want people to think of chatyeo
+  as such:
+  the topic is the query
+8:56 AM and the chat is the controller and the stage is the results or view
+  and the people use the chat to control the view
+  by doing this, they create the results
+  its a search engine created by people
+8:57 AM not by us or by a bot or by anyone else
+  we could market Chatyeo in so many brilliant wasy
+8:58 AM gershon: If the results are wiki, people would be able to edit the left side too
+  in the hover
+ me: it's not wiki
+  to that extent
+  it's a neural network
+8:59 AM meaning, we use sensory inputs instead of explicit directions
+  like, when a person does something naturally
+ gershon: So, eventually we want to aim for machines writing the content on the left?
+ me: if you are hungry and I put a cheeseburger in front of you and a bucket of sardines
+  you will go to the cheeseburger
+ gershon: k
+9:00 AM me: there is enough good data out there
+  all we have to do is assume that people will enjoy it if it's organized better visually and priority wise
+9:01 AM instead of paginatino
+  pagination
+  we have rewind
+  i'm telling you, we re-invented everything
+ gershon: right
+  Will we need summarization?
+ me: we have it
+9:02 AM gershon: We have limited screen space
+  Then wayfinder for the rest, or fit more into the hover?
+ me: well
+  that's where you come in now
+  that hover has lots in store for it
+ gershon: k
+9:03 AM me: and, people will fall inlove with certain hovers, and we have to ensure they can get back to those hovers
+  thus, they are to be followed as are broader rooms
+9:05 AM the tricky part is getting this right
+  meaning
+  we have it right now
+  but will it end up the way we envision it now
+  if we do, how can anyone deny us raving reviews
+9:06 AM there is enough technology and feature invested in the software
+  so that it will be reviewed carefully and seriously by all the major PR groups on the web
+ gershon: right
+9:07 AM We need relevant hovers for each topic
+  We need tracking of how users use the site, so we can improve the UI experience
+ me: let me worry about that
+  i'm on a roll
+9:08 AM that data is all bullshit
+  it boils down to philosophy
+  and knowing that something isn't right
+  about the web as we know it
+  it's about knowing that the experience today can be turn inside out and on it's head
+9:09 AM when that is clear, you'll begin thinking about all the obvious things you'll need in a new way
+ gershon: k
+ me: its sorta like the mentality garret put into the iphone
+9:10 AM he said, you wouldn't design a new phone and design a rotary dialing system for it
+  you'd think of better ways to make it easier and more intuitive, but at the same time, it has to make sense
+9:11 AM where the heuristic due dillegence comes into play
+  is in the HHI
+  i think I've understimated this challenge for us
+  the whole 50 rules project
+9:12 AM stemming from scenarios based on our research of broader conversational scenarios and behavior
+  with this data, we'll know better how the data should be presented and what data should be presented when
+9:13 AM gershon: I suppose we could chart the data in the interaction
+ me: if this can be dynamic and AI like
+9:14 AM yeah
+  so AI is about knowing what this discussion is about
+ gershon: For a restaurant something like:
+9:15 AM MAP Menu User Preferences
+ me: there are multiple layers
+  yeah,
+ gershon: The conversation will got back and forth between the different data
+9:16 AM me: I think you should look at HTMs to see what they offer in this way
+ gershon: What are HTMs?
+ me: Hierarchical Temporal Memory
+9:17 AM http://www.numenta.com/
+9:18 AM think about how your brain works
+9:19 AM your brain is not like a roll of flim
+9:20 AM it's more like a timeline with multiple relational nodes along the way
+  when you try and think back to third grad
+  grade
+  and you try and picture yourself
+  your brain assembles that momemnt
+9:21 AM it starts with a body, then your mind processes what the height and average weight should be of that boy and fills it in with clothing, color and begins to draw the rest of the room around it, as necessary
+  you know your standing in a building, but you don't add color to that building or think about the bricks on it until you zoom out a little and try to process it, sorta like gmaps
+9:22 AM gershon: just the essential features
+9:23 AM me: the HTM algorithm is sorta like this from what I understand, probably not as close to that analogy, which I had this morning while showering, but still, htms may offer a structure for our system to notice change in pattern
+9:24 AM gershon: HTM is for image processing
+9:26 AM I think we have for each interaction type, a list of data sources, views of those data sources, and an active view at any given point in time
+9:27 AM Sporting events might have as data sources: player bios, new about players, player statistics, in-field video, score cards, fan commentary, coach commentary, fan views, etc.
+9:28 AM We can construct views off of this from different data sources
+9:30 AM How does this mesh with the different data type views?
+9:33 AM me: well
+  we will never be able to hard code these mappings in our system
+  although, it is not impossible to identify them
+  and position them
+9:34 AM if we have recognized a pattern
+  there is a pattern that forms when discussion forms and when results form
+  sorta like my analogy with the neocortex
+9:35 AM and the way I feel we think
+  there are validations that occur
+  when pattern matches are successful
+  and the system should know to sustain those patterns while moving onto finding others
+  quite simply
+9:36 AM gershon: right
+  What is the best way to graph the process?
+ me: some governing process
+  should understand the varios states of the conversation
+9:37 AM and the permutations in it or changes in context
+ gershon: Can we assume the conversation is a linear process?
+ me: yes
+  if it deviates, it will come back eventually
+  and that's also why we have rewind
+  here's the thing
+9:38 AM in order to know where you are going, you have to know where you have been
+  and it's ok to deviate
+  and change
+  direction
+  there may be some consistancies that hold
+9:39 AM it may all change
+  but the system must know what was important by judging the sensory imput
+  and quite simply
+  all that is, is measuring the interactiving of the results area
+  and lending various actions theirin different weights
+9:40 AM so there the main chat has an additional layer
+ gershon: right with different layes
+ me: to consider
+9:41 AM we'll obtain our more granular control from the metachats and actions in WayFind
+  to the high level chatters, it could appear to be mind blowing
+  if they don't realize that people are in much more detailed discussions than what they have mentioned
+  so if I say HTM's vaguely
+9:42 AM there could be 2-3 meta discussions already happening somewhere
+  where progression and advancmenet is rapidly transcending
+  this data is important for that high level viewer and it must be packaged up nicely for him
+9:43 AM this is why our search can outperform any known to man
+ gershon: http://en.wikipedia.org/wiki/Hierarchical_hidden_Markov_model
+9:44 AM me: have you looked at this?
+  http://en.wikipedia.org/wiki/Layered_hidden_Markov_model
+  wondering if that's similar to our layers
+9:45 AM retrieval is important
+9:46 AM but dechypening meaning is also important
+ gershon: It looks like lhmm is in parallel
+  hierarchal has the hierarchy and sub-states
+ me: that's what our system does, don't forget
+  we are taking chat by surprise just as much as we are search
+9:47 AM when a student asks his teacher to explain something or challenges what he has said
+ gershon: I need to look more and see what the technical definition of htm
+  is is
+ me: that process can be more valuable that simply being able to find a document
+  for example
+  when I bought all those books
+9:48 AM it was valuable
+9:49 AM but what was equally valuable was the ability to work with another source, human, or text, that could help me decyphen what I was reading
+  the two abilities combined are key
+  but,
+  there is something about this occurance that I find interesting
+  it's the moment when a document or a book is interpreted
+9:50 AM and it's the breakdown of these interpretations
+  that flag critical points in the document
+  i think there is data there that we can capture
+  and analyze
+9:51 AM by stayin on its trail
+  you can easily lose wind and be lost on this one
+  people will do it for you
+  remember, so it's not so bad
+  but if our bots don't have their eyes peeled
+9:52 AM they will not do justice to our system
+  here is one more example of what I just said
+  when you read an amazon review of a book
+  people tend to analyze certain sections of the book
+9:53 AM secitons where the author has either drawn attention to something important
+  the reader is either agreeing with them or scrutanizing them
+  in an area
+  i find these areas to be important
+  if 10 reviewers of a document
+  draw attention to this influction point
+9:54 AM *inflection
+  now
+  these inflection points are interesting
+ gershon: right
+ me: and our body should be doing the work to find
+  more information about them
+  rather than miscellenious
+  nouns, etc.
+9:55 AM we can't be rhyming without reason
+  if you want to be an algorithm guy
+  you have to be a theory guy first
+  one who understands the primitive problem
+9:56 AM more than the numbers, equations, and reports
+  i need you to be that guy
+ gershon: k
+ me: and follow me, challenge me, but most importantly, someone who doesn't let this chat vaporize
+9:57 AM it will not be easy, and there will be moments when this stuff can be discouraging
+ gershon: I'm trying to take notes on where to go with this, but it isn't easy
+ me: here's one more thing to remember
+  take this entire chat for example
+  i wouldn't parse this chat
+  in chatyeo
+  to try and point to 100 different new places
+9:58 AM i would archive it in the appropriate location first and foremost
+  and when there are numerous other similar conversations
+  i should hope to find patterns between this class of a conversation
+9:59 AM gershon: right
+ me: when the higher level subjects throught a grouping of these chats
+  rise to the surface
+ gershon: Right, for now we have a very simple conception of a topic
+  We can look for more complex relationships between text
+10:00 AM me: right, we look for clues
+  and let our readers draw the conclusions
+  its about knowing when to say, HHMMs
+10:01 AM if you look at a huge mind map of the field of AI
+  it's too much to learn
+  to many directions to head in
+  *too
+  most all of what you'll see is irrelevant when your truly after something specific
+10:02 AM this is where other people put in your situation in the past can help
+  other people in your situation will say things in a general order that mark a tiny trail
+10:03 AM enough of these tiny trails will combine to form a stronger scent
+  and they can recombine easily
+  taking bits and pieces from eachother
+10:04 AM as I chat with you
+  these tiny trails emerge from the brain
+  based on relevancy
+  and provide me with what I may be saying next
+  or visual indicators
+ gershon: right
+ me: search at it's finest
+10:05 AM but, how we get there is different from how others get there
+  becuase our search shows us the future
+  it's 2 steps ahead
+  its a form or prediction
+10:06 AM gershon: So we have 1) process chats of where the point of the chat is to go between different states and 2) topic chats where you are swirling around searching for just the right nugget of data
+  Both can be present in the same chat too
+ me: yeah, I think that's a correct assesment
+  try it again
+10:07 AM gershon: There is the process of getting to information, which is learning process in itself, and then there is the actual information we are searching for
+10:08 AM me: of course
+ gershon: We need to relate both with past chat experience
+  The process has states, which can also have sub-states
+10:09 AM me: yes
+  it grabs the pieces it needs on the fly
+ gershon: Right
+10:10 AM me: you tend to look at things from the machines perspective
+  i look at it from the neuro perspective
+  which is fine
+  we need to do that
+10:11 AM gershon: I want to figure out how the ideas are eventually going to convert into an actual algorithm
+ me: i think the answer is simple
+  and I can diagram it
+  right
+  no, that's great
+  we are on the same page
+  we have to just talk about it alot
+  when it makes sense in our head
+  the algorithm will write itself
+10:12 AM it's not too hard to grasp either
+  there are excersizes we can perform also
+10:13 AM print 15 chats about some closely related subjects
+  and try to identify patterns in them and see how if combined, what the benefits would be
+ gershon: yeah, I'd like to try this stuff out somehow, but it is hard to figure out what data to try it on
+10:14 AM me: there is always a trail of interconnected information
+  there are master trails
+ gershon: I suppose we can map out conversations literary analysis style
+ me: and smaller trails that stem from the main path
+  the trick is to fit everything and keep them on this path
+10:15 AM theoritically, from day one, this trail will grow and not need supplementation
+  if that can be done, the algorithm we create may very well be applicable to everything
+  but, besides that
+10:16 AM from the top down
+  there should always be a clear understanding of the highest level node in the topic
+10:17 AM and the child nodes must always know where they fit in the picture
+  from there, the branches will form
+  and to use another analogy
+  these branches are more like roots
+10:18 AM the more they grow
+  the bigger the plant gets
+ gershon: yeah
+ me: so these roots will grow in many directions
+  soaking up nutrients from the soil
+  the better these roots understand eachother, the better the plant will grow
+10:19 AM gershon: I'm going to try to writeup/prototype how to actually create a technical implementation of this
+ me: good
+  go for it
+  i will catch you later
+  i'm up by my moms with kids
+  no beers this weekend
+  but next, I want to have a bbq with the company
+ gershon: k
+ me: we'll grab dinner this week sometime
+  maybe tamarind
+ gershon: k
+  You going back to NYC?
+ me: that place seems to inspire some creative thinking
+  no, valley
+10:20 AM NYC should be coming here
+ gershon: When you leaving?
+  k
+ me: as soon as fenwick sorts out a few things
+  maybe 7-8 days
+  the want me to meet like, 15 of the valleys most important players
+  they want to vouch for me
+  they saw the prototype
+10:21 AM i might meet danny hillis, etc
+  he's the founder of freebase
+  i'd like to try and get him on our board
+ gershon: k, so Martin Logn and Ophir are now on the board?
+10:22 AM Have the two of them met?

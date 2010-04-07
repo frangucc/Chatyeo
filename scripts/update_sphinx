@@ -1,0 +1,6 @@
+# /etc/cron.d/update-motd: crontab fragment for update-motd
+#
+# Update sphinx index with latest messages
+
+* * * * *	root	[ -x /usr/local/bin/searchd ] && [ -x /usr/local/bin/indexer ] && /usr/local/bin/searchd || /usr/local/bin/indexer --rotate messages 2>/dev/null
+

@@ -1,0 +1,28 @@
+{application, chatyeo_web, [
+  {description,  "Chatyeo Nitrogen Website"},           
+  {vsn, "0.1.0"},        
+	{mod, {chatyeo_web_app, []}},   
+  {modules, [chatyeo_web_app,
+            web_register,
+            web_requests,
+            web_chat,
+            web_index,
+            web_test,
+            web_display,
+            web_wayfinder,
+            web_login,
+            web_auth,
+            session,
+            db_utils,
+            element_chatbox_message,
+	          web_modal_popup,
+	          web_modal_timeline,
+            element_chatbox_message_wrapper,
+            element_chatbox,
+            element_chatbox_image,
+            element_chatboxfeed,
+	    html
+      ]},
+  {registered,[chatyeo_web]},        
+  {applications, [kernel, stdlib, sasl, gas, ewlib, mnesia, crypto, chatyeo]}
+]}.

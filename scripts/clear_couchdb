@@ -1,0 +1,4 @@
+#!/bin/bash
+
+curl -X GET http://localhost:5984/_all_dbs 2> /dev/null | sed 's/^.//' | sed 's .$  ' | sed -e 's/"//g' | xargs -I'{}' -n1 -d "," curl -X DELETE http://localhost:5984/'{}'
+

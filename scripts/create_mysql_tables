@@ -1,0 +1,133 @@
+
+use chatyeo;
+
+CREATE TABLE `topics` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `topic` varchar(150) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `topic` (`topic`),
+  KEY `topic_2` (`topic`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `topic_room` (
+  `topic_id` int(11) NOT NULL DEFAULT '0',
+  `room_id` int(11) NOT NULL DEFAULT '0',
+  `timestamp` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`topic_id`,`room_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `rooms` (
+  `id` int(11) NOT NULL auto_increment,
+  `room` varchar(150) NOT NULL,
+  `category` int(11) NOT NULL,
+  `has_started` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY  (`id`,`room`),
+  UNIQUE KEY `room` (`room`)
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `category` varchar(150) NOT NULL,
+  `image_url` char(150) DEFAULT NULL,
+  `class` char(5) DEFAULT NULL,
+  PRIMARY KEY (`id`,`category`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `popularity` (
+  `popularity` int(11) NOT NULL,
+  `image_html` char(50) DEFAULT NULL,
+  PRIMARY KEY (`popularity`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+LOCK TABLES `categories` WRITE;
+/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,'Music','/images/past-topics/music-mini-icon.jpg','mus'),(2,'Shopping','/images/past-topics/shopping-mini-icon.jpg','shop'),(3,'Web Search','/images/past-topics/web-mini-icon.jpg','web'),(4,'Politics','/images/past-topics/politics-mini-icon.jpg','pol'),(5,'News','/images/past-topics/news-mini-icon.jpg','news'),(6,'Web','/images/past-topics/web-mini-icon.jpg','web'),(7,'Modal','','modal');
+/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `popularity` WRITE;
+/*!40000 ALTER TABLE `popularity` DISABLE KEYS */;
+INSERT INTO `popularity` VALUES (1,'<img src=\"/images/popularity_high.gif\" alt=\"\" />'),(2,'<img src=\"/images/popularity_average.gif\" alt=\"\" /'),(3,'<img src=\"/images/popularity_low.gif\" alt=\"\" />');
+/*!40000 ALTER TABLE `popularity` ENABLE KEYS */;
+UNLOCK TABLES;
+
+CREATE TABLE `tags` (
+  `id` int(11) NOT NULL auto_increment,
+  `tag` varchar(150) UNIQUE NOT NULL,
+  INDEX (`tag`),
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL auto_increment,
+  `username` char(15) UNIQUE NOT NULL,
+  INDEX (`username`),
+  `fullname` char(255) NOT NULL,
+  `email` char(255) UNIQUE NOT NULL,
+  INDEX (`email`),
+  `password` char(41) NOT NULL,
+  `date_joined` date NOT NULL,
+  `last_logged_in` datetime NOT NULL,
+  `anon_username` char(15) DEFAULT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL auto_increment,
+  `user` int(11) NOT NULL,
+  `who_from` int(11) NOT NULL,
+  `time` int(11) NOT NULL,
+  INDEX (`user`, `time`),
+  `type` int(11) NOT NULL,
+  `message` char(255) NOT NULL,
+  `message_body` char(255) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `messages_index` (
+  `id` int(11) NOT NULL,
+  `weight` int(11) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `user` int(11) DEFAULT NULL,
+  `who_from` int(11) DEFAULT NULL,
+  `time` int(11) DEFAULT NULL,
+  `type` int(11) DEFAULT NULL,
+  KEY `message` (`message`)
+) ENGINE=SPHINX DEFAULT CHARSET=latin1 CONNECTION='sphinx://localhost:3312/messages';
+ 
+CREATE TABLE `friends` (
+  `user_id` int(11) NOT NULL default '0',
+  `friend_id` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`user_id`,`friend_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `pending_friends` (
+  `user_id` int(11) NOT NULL DEFAULT '0',
+  `pending_friend_id` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`pending_friend_id`,`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `user_room` (
+  `user_id` int(11) NOT NULL default '0',
+  `room_id` int(11) NOT NULL default '0',
+  `last_entered` int(11) NOT NULL,
+  `in_currently` tinyint(1) NOT NULL,
+  PRIMARY KEY  (`user_id`,`room_id`),
+  INDEX (`in_currently`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `tweets` (
+  `text` char(140) NOT NULL,
+  `screen_name` char(20) NOT NULL,
+  `friends_count` int(11) NOT NULL,
+  `account_created_time` char(60) NOT NULL,
+  `real_name` char(80) NOT NULL,
+  `statuses_count` int(11) NOT NULL,
+  `profile_image_url` char(80) NOT NULL,
+  `location` char(80) NOT NULL,
+  `user_id` int(20) NOT NULL,
+  `followers_count` int(11) NOT NULL,
+  `message_created_time` char(60) NOT NULL,
+  `message_id` int(20) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo Generating Documentation.
+
+erl \
+  -eval "edoc:application(chatyeo, "chatyeo/lib/chatyeo/src", [])"

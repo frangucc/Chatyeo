@@ -1,0 +1,17 @@
+use chatyeo;
+
+CREATE TABLE `tweets` (
+  `text` char(140) NOT NULL,
+  `screen_name` char(20) NOT NULL,
+  `friends_count` int(11) NOT NULL,
+  `account_created_time` char(60) NOT NULL,
+  `real_name` char(80) NOT NULL,
+  `statuses_count` int(11) NOT NULL,
+  `profile_image_url` char(80) NOT NULL,
+  `location` char(80) NOT NULL,
+  `user_id` int(20) NOT NULL,
+  `followers_count` int(11) NOT NULL,
+  `message_created_time` char(60) NOT NULL,
+  `message_id` int(20) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

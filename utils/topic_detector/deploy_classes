@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Deploy new classes to standard location
+
+TD_DIR=/opt/chatyeo/utils/topic_detector
+
+sudo rm -fr $TD_DIR/classes/*
+sudo cp -R classes/* $TD_DIR/classes/

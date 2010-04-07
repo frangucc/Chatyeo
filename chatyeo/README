@@ -1,0 +1,17 @@
+How to run
+
+First. Fix sinan.
+Edit /usr/local/erlware/release_packages/sinan-0.13.0.2/client/libsinan/shell_handler.py
+
+       print "starting shell ..."
+        os.execvp ("/usr/bin/erl", args)
+#        os.execvp(prefix + "bin/erl", args)
+
+
+
+
+$ sinan shell
+1> application:start(chatyeo).
+2> jabber_proxy_util:main().
+3> jabber_proxy:login("tristan", "temp4now").
+4> jabber_proxy:send_message("tristan@localhost", "tristan", "hello there").

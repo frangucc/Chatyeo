@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo Adding needed users to ejabberd
+
+./register_user chatyeo temp4now &> /dev/null
+#./register_user diginux temp4now &> /dev/null
+#./register_user tristan temp4now &> /dev/null
+#./register_user mike temp4now &> /dev/null

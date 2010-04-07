@@ -1,0 +1,18 @@
+#!/bin/bash
+
+EXPECTED_ARGS=1
+E_BADARGS=65
+
+if [ $# -ne $EXPECTED_ARGS ]
+then
+  echo "Usage: `basename $0` index_dir"
+  exit $E_BADARGS
+fi
+
+LUCENE_DIR=/opt/chatyeo/utils/lucene
+
+export CLASSPATH=$LUCENE_DIR/classes/
+for file in $LUCENE_DIR/lib/*.jar; do export CLASSPATH=$file:$CLASSPATH; done
+
+java com.chatyeo.lucene.util.ChatHistoryIndexer "$1"
+

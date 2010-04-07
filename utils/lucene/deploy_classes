@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Deploy new classes to standard location
+
+LUCENE_DIR=/opt/chatyeo/utils/lucene
+
+sudo rm -fr $LUCENE_DIR/classes/com
+sudo cp -R classes/com $LUCENE_DIR/classes/

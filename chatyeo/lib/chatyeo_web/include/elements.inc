@@ -1,0 +1,6 @@
+-record(chatbox, {?ELEMENT_BASE(element_chatbox), body=""}). 
+-record(chatboxfeed, {?ELEMENT_BASE(element_chatboxfeed), body=""}). 
+-record(chatbox_message_wrapper, {?ELEMENT_BASE(element_chatbox_message_wrapper), body="", user="", email=""}).
+-record(chatbox_message, {?ELEMENT_BASE(element_chatbox_message), body="", email="", user=""}). 
+-record(chatbox_image, {?ELEMENT_BASE(element_chatbox_image), email=""}). 
+-record(chatbox_textarea, {?ELEMENT_BASE(element_chatbox_textarea), text="", html_encode=true, next, postback}).

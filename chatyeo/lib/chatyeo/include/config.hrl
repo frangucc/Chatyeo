@@ -1,8 +1,8 @@
 -ifndef(chatyeo_config_hrl).
 -define(chatyeo_config_hrl, ok).
 
--define(RESULT_NS, "http://www.chatyeo.com/2009/Results").
--define(QUESTION_NS, "http://www.chatyeo.com/2009/Question").
+-define(RESULT_NS, "http://184.73.184.103/2009/Results").
+-define(QUESTION_NS, "http://184.73.184.103/2009/Question").
 
 -define(IMAGES_JS, <<"client.onImages">>).
 -define(TWEET_JS, <<"client.onTwitter">>).

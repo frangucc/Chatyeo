@@ -20,7 +20,7 @@
 -define(SET_WS, 14).
 
 %% Full address of topic detector server
--define(TD_SERVER, 'topicdetectorserver1@pannepot').
+-define(TD_SERVER, 'ubuntu@domU-12-31-39-0C-34-03').
 
 %% Topic bot returns the following
 %% {CT_WIKI_ID, CT_NAME, CT_WEIGHT, CT_REL_TO_CTXT, CT_REL_TO_OTHER, CT_GENERALITY, 6}

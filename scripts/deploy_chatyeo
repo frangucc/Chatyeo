@@ -10,4 +10,4 @@ sudo rm -fr /opt/chatyeo/wwwroot
 sudo cp -R lib/chatyeo_web/wwwroot /opt/chatyeo/
 sudo ln -sf /opt/erlang-libs/nitrogen/www /opt/chatyeo/wwwroot/nitrogen
 
-sudo chmod +x /usr/local/erlware/lib/ssl-3.10.3/priv/bin/ssl_esock
+sudo chmod +x /usr/local/erlware/lib/ssl-3.10.8/priv/bin/ssl_esock

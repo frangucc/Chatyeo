@@ -1,6 +1,6 @@
 Install the following libraries:
 
-% sudo apt-get install git-core erlang libpam0g-dev make libexpat1-dev zlib1g-dev libssl-dev automake libtool bison libmysqlclient16-dev lib64ncurses5-dev build-essential mono-2.0-devel libboost-dev ruby1.8-dev sun-java6-jdk ant pkg-config flex libmozjs-dev libcurl4-openssl-dev subversion mono-devel ejabberd openjdk-6-jre lamp-server^ vim
+% sudo apt-get install git-core erlang libpam0g-dev make libexpat1-dev zlib1g-dev libssl-dev automake libtool bison libmysqlclient16-dev lib64ncurses5-dev build-essential mono-2.0-devel libboost-dev ruby1.8-dev sun-java6-jdk ant pkg-config flex libmozjs-dev libcurl4-openssl-dev subversion mono-devel ejabberd openjdk-6-jre lamp-server^ vim unzip subversion pkg-config flex
 
 % git config --global color.ui true
 

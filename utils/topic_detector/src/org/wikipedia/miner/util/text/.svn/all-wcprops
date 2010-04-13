@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/util/text
+END
+StopwordRemover.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/wikipedia-miner/!svn/ver/13/trunk/src/org/wikipedia/miner/util/text/StopwordRemover.java
+END
+TextProcessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/util/text/TextProcessor.java
+END
+SimpleStemmer.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/wikipedia-miner/!svn/ver/13/trunk/src/org/wikipedia/miner/util/text/SimpleStemmer.java
+END
+CaseFolder.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/util/text/CaseFolder.java
+END
+PorterStemmer.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/util/text/PorterStemmer.java
+END
+Cleaner.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/wikipedia-miner/!svn/ver/13/trunk/src/org/wikipedia/miner/util/text/Cleaner.java
+END

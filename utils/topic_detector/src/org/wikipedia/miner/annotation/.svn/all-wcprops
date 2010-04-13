@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/annotation
+END
+Context.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/annotation/Context.java
+END
+TopicDetector.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/annotation/TopicDetector.java
+END
+Disambiguator.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/annotation/Disambiguator.java
+END
+ArticleCleaner.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/annotation/ArticleCleaner.java
+END
+TopicReference.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/annotation/TopicReference.java
+END
+Topic.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/annotation/Topic.java
+END

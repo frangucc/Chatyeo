@@ -14,4 +14,4 @@ TD_DIR=/opt/chatyeo/utils/topic_detector
 export CLASSPATH=$TD_DIR/classes/
 for file in $TD_DIR/lib/*.jar; do export CLASSPATH=$file:$CLASSPATH; done
 
-java -Xmx1500m TopicDetectorServer 127.0.0.1:3306 wikipedia wikiuser temp4now
+java -Xmx1500m TopicDetectorServer 127.0.0.1:3306 wikipedia wikiuser z8efx

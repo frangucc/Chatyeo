@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/util
+END
+ArticleSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/util/ArticleSet.java
+END
+SortedVector.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/util/SortedVector.java
+END
+Position.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/util/Position.java
+END
+ProgressNotifier.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/util/ProgressNotifier.java
+END
+PageIterator.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/util/PageIterator.java
+END
+MarkupStripper.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/util/MarkupStripper.java
+END
+MySqlDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/util/MySqlDatabase.java
+END
+SentenceSplitter.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/util/SentenceSplitter.java
+END
+RelatednessCache.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/util/RelatednessCache.java
+END
+Result.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/util/Result.java
+END

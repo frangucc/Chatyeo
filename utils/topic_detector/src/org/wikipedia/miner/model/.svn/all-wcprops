@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/model
+END
+Disambiguation.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/model/Disambiguation.java
+END
+Redirect.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/model/Redirect.java
+END
+Article.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/model/Article.java
+END
+Wikipedia.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/model/Wikipedia.java
+END
+Anchor.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/model/Anchor.java
+END
+SensePage.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/model/SensePage.java
+END
+WikipediaDatabase.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/model/WikipediaDatabase.java
+END
+Page.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/model/Page.java
+END
+Category.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svnroot/wikipedia-miner/!svn/ver/19/trunk/src/org/wikipedia/miner/model/Category.java
+END

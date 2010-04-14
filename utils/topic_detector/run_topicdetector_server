@@ -9,7 +9,8 @@ then
   exit $E_BADARGS
 fi
 
-TD_DIR=/opt/chatyeo/utils/topic_detector
+TD_DIR=./
+#TD_DIR=/opt/chatyeo/utils/topic_detector
 
 export CLASSPATH=$TD_DIR/classes/
 for file in $TD_DIR/lib/*.jar; do export CLASSPATH=$file:$CLASSPATH; done

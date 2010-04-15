@@ -9,6 +9,7 @@ sudo apt-get install lamp-server^
 
 #for mysql set password to "temp4now" without quotes
 mysql -u root -p
+
 # enter pw when prompted
 mysql> CREATE USER 'wikiuser'@'localhost' IDENTIFIED BY 'z8efx';
 Query OK, 0 rows affected (0.00 sec)
@@ -44,6 +45,7 @@ cat id_rsa.pub
 
 #copy and paste on git's public key section
 ================
+
 # download Jay's code from git
 
 sudo apt-get install git-core
@@ -64,10 +66,15 @@ sudo apt-get install sun-java6-jdk
 # or 
 sudo apt-get install openjdk-6-jdk
 
-# Now we compile and try to upload data to the dd
+# Now we compile and try to upload data to the db
 
 make
 make wikiminer
 make test
 
-#pray to the lord if it works!
+#pray to the lord if it works! (this process will take a few hours)
+
+#once all this complete
+
+./run_topicdetector_server 
+

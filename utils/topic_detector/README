@@ -64,8 +64,10 @@ sudo apt-get install sun-java6-jdk
 # or 
 sudo apt-get install openjdk-6-jdk
 
-# Now we compile and try to upload data to the db
+# Now we compile and try to upload data to the dd
 
+make
+make wikiminer
 make test
 
 #pray to the lord if it works!

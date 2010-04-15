@@ -1509,7 +1509,7 @@ public class WikipediaDatabase extends MySqlDatabase {
 	 */
 	public static void main(String[] args) {
 		try {
-			Wikipedia wikipedia = new Wikipedia("localhost", "enwiki_20080727", "student", "*****") ; 
+			Wikipedia wikipedia = new Wikipedia("localhost", "wikipedia", "wikiminer", "z8efx") ; 
 			//Wikipedia.getInstanceFromArguments(args) ;
 			
 			//File dataDirectory = new File("/research/wikipediaminer/data/en/20080727") ;

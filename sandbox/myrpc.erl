@@ -4,8 +4,8 @@
 
 setup() ->
     %% spawn('bar@pannepot',myrpc,server,[]).
-    %% spawn('bar@pannepot.diginux.net',myrpc,server,[]).
-    spawn('ubuntu@domU-12-31-39-0C-34-03',myrpc,server,[]).
+     spawn('bar@pannepot.diginux.net',myrpc,server,[]).
+    %% spawn('ubuntu@domU-12-31-39-0C-34-03',myrpc,server,[]).
 
 server() ->
     register(facserver,self()),
@@ -20,8 +20,8 @@ facLoop() ->
 
 f(N) ->
    %% {searcher_server, 'topicdetectorserver1@pannepot.diginux.net'} ! {self(), 1, N},
-    {searcher_server, 'ubuntu@domU-12-31-39-0C-34-03'} ! {self(), 1, N},
-%%    {facserver, 'bar@pannepot.diginux.net'} ! {self(), N},
+   %% {searcher_server, 'ubuntu@domU-12-31-39-0C-34-03'} ! {self(), 1, N},
+    {facserver, 'bar@pannepot.diginux.net'} ! {self(), N},
     receive
         {ok, Res} ->
             Val = Res;
@@ -32,8 +32,8 @@ f(N) ->
 
 g(N) ->
     %% {searcher_server, 'searcherserver1@pannepot.diginux.net'} ! {self(), 2, N},
-    {searcher_server, 'ubuntu@domU-12-31-39-0C-34-03'} ! {self(), 2, N},
-%%    {facserver, 'bar@pannepot.diginux.net'} ! {self(), N},
+%%    {searcher_server, 'ubuntu@domU-12-31-39-0C-34-03'} ! {self(), 2, N},
+    {facserver, 'bar@pannepot.diginux.net'} ! {self(), N},
     receive
         {ok, Res} ->
             Val = Res;
@@ -43,7 +43,7 @@ g(N) ->
     io:format("Echo of ~p is ~p.~n", [N,Val]).
 
 h(N) ->
-    %%{searcher_server, 'searcherserver1@pannepot.diginux.net'} ! {self(), 3, N},
+    {searcher_server, 'searcherserver1@pannepot.diginux.net'} ! {self(), 3, N},
     {searcher_server, 'ubuntu@domU-12-31-39-0C-34-03'} ! {self(), 3, N},
 %%    {facserver, 'bar@pannepot.diginux.net'} ! {self(), N},
     receive

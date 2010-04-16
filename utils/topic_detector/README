@@ -69,12 +69,12 @@ sudo apt-get install openjdk-6-jdk
 # Now we compile and try to upload data to the db
 
 make
-make wikiminer
-make test
+# make wikiminer no longer needed
+make install
 
 #pray to the lord if it works! (this process will take a few hours)
 
 #once all this complete
 
-./run_topicdetector_server 
+$ ./run_topicdetector_server
 

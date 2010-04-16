@@ -36,6 +36,7 @@ public class TopicDetectorServer
     {
         c = new ChatyeoTopicDetector(server,db,user,pw);
         chanSet = new HashSet();
+	System.out.println("Topic Detector Server Listening...");
     }
     public Worker getWorker(OtpErlangObject o, OtpMbox mbox){
         return new Worker(o,mbox);

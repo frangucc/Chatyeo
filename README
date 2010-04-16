@@ -30,6 +30,12 @@ Now run the code:
 
 Do the following each time you change the chatyeo code
 
+Modify the following files:
+	chatyeo/lib/chatyeo/src/utils/topic_detector.erl
+	sandbox/myrpc.erl
+
+change the @server to the one you want to connect to.
+
 % ./deploy_chatyeo
 % chatyeo
 

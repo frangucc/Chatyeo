@@ -66,13 +66,14 @@ sudo apt-get install sun-java6-jdk
 # or 
 sudo apt-get install openjdk-6-jdk
 
-# Now we compile and try to upload data to the db
+# Now we compile the java classes
 
-make
-# make wikiminer no longer needed
-make install
+$ ./create_classes
 
-#pray to the lord if it works! (this process will take a few hours)
+# now we upload the data into the wikipedia database.
+# Go out have fun, play some games! (this process could take a few hours)
+
+$ make install
 
 #once all this complete
 

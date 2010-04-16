@@ -45,10 +45,14 @@ public class ChatyeoTopicDetector{
     this.disambiguator = new Disambiguator(this.wikipedia, tp, 0.01, 0, 25);
     this.disambiguator.loadClassifier(new File(DISAMBIGUATOR_FILE));
 
+    System.out.println("Done...") ;
+
     this.topicDetector = new TopicDetector(this.wikipedia, disambiguator, null, true, false);
 
     this.linkDetector = new LinkDetector(this.wikipedia); 
     this.linkDetector.loadClassifier(new File(LINKDETECTOR_FILE));
+
+    System.out.println("Done...") ;
 
     this.dp = new HtmlPreprocessor();
 

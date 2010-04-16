@@ -32,13 +32,13 @@ public class ChatyeoTopicDetector{
   {
     this.wikipedia = new Wikipedia(databaseServer,databaseName,userName,password);
     System.out.println("Caching In Links");
-    this.wikipedia.getDatabase().cacheInLinks(new File("/opt/chatyeo/utils/topic_detector/en_20090306/"),null,null);
+    this.wikipedia.getDatabase().cacheInLinks(new File("en_20090306/"),null,null);
     System.out.println("Caching Pages");
-    this.wikipedia.getDatabase().cachePages(new File("/opt/chatyeo/utils/topic_detector/en_20090306/"),null,null);
+    this.wikipedia.getDatabase().cachePages(new File("en_20090306/"),null,null);
     System.out.println("Caching Achors");
-    this.wikipedia.getDatabase().cacheAnchors(new File("/opt/chatyeo/utils/topic_detector/en_20090306/"), new CaseFolder(), null, 10, null);
+    this.wikipedia.getDatabase().cacheAnchors(new File("en_20090306/"), new CaseFolder(), null, 10, null);
     System.out.println("Caching Generality");
-    this.wikipedia.getDatabase().cacheGenerality(new File("/opt/chatyeo/utils/topic_detector/en_20090306/"),null,null);
+    this.wikipedia.getDatabase().cacheGenerality(new File("en_20090306/"),null,null);
 
     this.tp = new CaseFolder();
 
@@ -47,7 +47,8 @@ public class ChatyeoTopicDetector{
 
     this.topicDetector = new TopicDetector(this.wikipedia, disambiguator, null, true, false);
 
-    this.linkDetector = new LinkDetector(this.wikipedia); this.linkDetector.loadClassifier(new File(LINKDETECTOR_FILE));
+    this.linkDetector = new LinkDetector(this.wikipedia); 
+    this.linkDetector.loadClassifier(new File(LINKDETECTOR_FILE));
 
     this.dp = new HtmlPreprocessor();
 

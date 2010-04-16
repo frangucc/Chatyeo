@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ -d classes ]; then
+	echo "Cleaning classes folder"
+	rm -r classes/*
+else
+	echo "Creating classes folder"
+	mkdir classes
+fi
+
+echo Compiling Java to classes
+
+make
+
+
+

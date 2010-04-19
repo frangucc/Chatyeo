@@ -70,16 +70,18 @@ public class TopicDetectorServer
                 from = (OtpErlangPid)(msg.elementAt(0));
                 type = ((OtpErlangLong)(msg.elementAt(1))).intValue();
 
+		System.out.println("Got Message of type: "+type+"\n\r from: "+from);
                 cat.info("Got Message of type " + type + " from " + from);
 
                 // Check string for topics(can be multiple sentences)
                 if (type == GET_TOPICS)
                 {
+		    System.out.println("Handling GET_TOPICS");
                     cat.info("Handling GET_TOPICS");
                     //{Channel_Id, [{Username, Text},...]}
                     room_id = ((OtpErlangLong)(msg.elementAt(2))).longValue();
                     OtpErlangList list = (OtpErlangList)(msg.elementAt(3));
-
+		    System.out.println("TopicDetector got: "+type+" "+list);
                     cat.info("TopicDetector got: " + type + " " + list);
 
                     if(!chanSet.contains(room_id)){
@@ -90,20 +92,25 @@ public class TopicDetectorServer
                         reply[1] = query(room_id, list);
 
                         OtpErlangTuple tuple = new OtpErlangTuple(reply);
+                        System.out.println("Sending Reply: " + tuple);
                         cat.info("Sending Reply: " + tuple);
                         mbox.send(from,tuple);
                         chanSet.remove(room_id);
                     }else{
+                        System.out.println("Ignoring message in GET_TOPICS");
                         cat.info("Ignoring message in GET_TOPICS");
+
                         OtpErlangObject[] reply = new OtpErlangObject[2];
                         reply[0] = error;
                         reply[1] = ignore;
                         OtpErlangTuple tuple = new OtpErlangTuple(reply);
+                        System.out.println("Sending Reply: " + tuple);
                         cat.info("Sending Reply: " + tuple);
                         mbox.send(from,tuple);
                     }
                 }else if(type == GET_ADMIN_TOPICS)
                 {
+                    System.out.println("Handling GET_ADMIN_TOPICS");
                     cat.info("Handling GET_ADMIN_TOPICS");
                     room_id = ((OtpErlangLong)(msg.elementAt(2))).longValue();
                     OtpErlangObject[] reply = new OtpErlangObject[2];
@@ -111,19 +118,23 @@ public class TopicDetectorServer
                     try{
                         reply[1] = query_admin(room_id, query);
                     }catch(Exception e){
+                        System.err.println("Something bad happened \n\r"+ e);
                         cat.error("Something bad happened", e);
                         reply[1] = nil;
                     }
                     OtpErlangTuple tuple = new OtpErlangTuple(reply);
+                    System.out.println("Sending Reply: " + tuple);
                     cat.info("Sending Reply: " + tuple);
                     mbox.send(from,tuple);
                 }else if(type == DETECT_TOPICS){
+                    System.out.println("Handling DETECT_TOPICS");
                     cat.info("Handling DETECT_TOPICS");
                     OtpErlangObject[] reply = new OtpErlangObject[2];
                     reply[0] = ok;
                     reply[1] = detect_topics(new String(
                                 ((OtpErlangBinary)(msg.elementAt(2))).binaryValue()));
                     OtpErlangTuple tuple = new OtpErlangTuple(reply);
+                    System.out.println("Sending Reply: " + tuple);
                     cat.info("Sending Reply: " + tuple);
                     mbox.send(from,tuple);
 
@@ -159,6 +170,7 @@ public class TopicDetectorServer
                 }
                 else
                 {
+                    System.out.println("Ignoring search type: " + type);
                     cat.warn("Ignoring search type: " + type);
                     OtpErlangObject[] reply = new OtpErlangObject[2];
                     reply[0] = error;
@@ -167,6 +179,7 @@ public class TopicDetectorServer
                     mbox.send(from,tuple);
                 }
             }catch(Exception e){
+                System.err.println("Something bad happened \n\r"+e);
                 cat.error("Something bad happened", e);
             }
         }
@@ -317,6 +330,7 @@ public class TopicDetectorServer
         OtpErlangTuple result_tuple = new OtpErlangTuple(result_object);
         //OtpErlangObject[] tuple = {new OtpErlangString(topic.topic_name),new OtpErlangDouble(topic.topic_weight)};
         //return result_list;
+	System.out.println(result_tuple);
         return result_tuple;
     }
 

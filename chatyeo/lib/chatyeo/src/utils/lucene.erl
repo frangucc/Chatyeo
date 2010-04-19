@@ -6,7 +6,7 @@
 %% @todo Add code that actually starts up java process
 
 init() ->
-    {searcher_server, 'searcherserver1@pannepot.diginux.net'} ! {self(), 501, "blah"},
+    {searcher_server, 'searcherserver1@cloud-laptop'} ! {self(), 501, "blah"},
     receive
         Val -> ok
     end,
@@ -16,7 +16,7 @@ init() ->
 %% @spec index_chat_history() -> ok
 
 index_chat_history() ->
-    {searcher_server, 'searcherserver1@pannepot.diginux.net'} ! {self(), 101, "blah"},
+    {searcher_server, 'searcherserver1@cloud-laptop'} ! {self(), 101, "blah"},
     receive
         Val -> ok
     end,
@@ -26,7 +26,7 @@ index_chat_history() ->
 %% @spec add_chat_history() -> ok
 
 add_chat_history() ->
-    {searcher_server, 'searcherserver1@pannepot.diginux.net'} ! {self(), 101, "blah"},
+    {searcher_server, 'searcherserver1@cloud-laptop'} ! {self(), 101, "blah"},
     receive
         Val -> ok
     end,
@@ -36,7 +36,7 @@ add_chat_history() ->
 %% @spec index_rssml(RSSMLDirectory::directory()) -> ok
 
 index_rssml(RSSMLDirectory) ->
-    {searcher_server, 'searcherserver1@pannepot.diginux.net'} ! {self(), 102, RSSMLDirectory},
+    {searcher_server, 'searcherserver1@cloud-laptop'} ! {self(), 102, RSSMLDirectory},
     receive
         Val -> ok
     end,
@@ -46,7 +46,7 @@ index_rssml(RSSMLDirectory) ->
 %% @spec add_rssml(RSSMLDirectory::directory()) -> ok
 
 add_rssml(RSSMLDirectory) ->
-    {searcher_server, 'searcherserver1@pannepot.diginux.net'} ! {self(), 102, RSSMLDirectory},
+    {searcher_server, 'searcherserver1@cloud-laptop'} ! {self(), 102, RSSMLDirectory},
     receive
         Val -> ok
     end,
@@ -57,7 +57,7 @@ add_rssml(RSSMLDirectory) ->
 %% @todo Set up nice way of doing node/server name
 
 search_chat_history(Query) ->
-    {searcher_server, 'searcherserver1@pannepot.diginux.net'} ! {self(), 1, Query},
+    {searcher_server, 'searcherserver1@cloud-laptop'} ! {self(), 1, Query},
     receive
         {ok, Res} ->
             Val = Res;
@@ -71,7 +71,7 @@ search_chat_history(Query) ->
 %% @todo Set up nice way of doing node/server name
 
 search_rss(Query) ->
-    {searcher_server, 'searcherserver1@pannepot.diginux.net'} ! {self(), 2, Query},
+    {searcher_server, 'searcherserver1@cloud-laptop'} ! {self(), 2, Query},
     receive
         {ok, Res} ->
             Val = Res;

@@ -128,7 +128,7 @@ public class SearcherServer
    public static void main (String[] args) throws Exception
     {
 
-      OtpNode bar = new OtpNode("searcherserver1@pannepot.diginux.net");
+      OtpNode bar = new OtpNode("searcherserver1@cloud-laptop");
       OtpMbox mbox = bar.createMbox("searcher_server");
 
       OtpErlangObject o;

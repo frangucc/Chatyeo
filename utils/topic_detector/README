@@ -8,6 +8,28 @@ sudo apt-get upgrade
 sudo apt-get install lamp-server^
 
 #for mysql set password to "temp4now" without quotes
+
+================
+# add public key to github.com
+
+cd ~/.ssh
+ssh-keygen -t rsa -C"Wikipedia Miner Server"
+
+#(press enter throughout the proccess)
+
+cat id_rsa.pub
+
+#copy and paste on git's public key section
+================
+
+# download Jay's code from git
+
+sudo apt-get install git-core
+cd ~/projects
+git clone git@github.com:frangucc/Chatyeo.git chatyeo
+
+# create database schema
+
 mysql -u root -p
 
 # enter pw when prompted
@@ -30,27 +52,16 @@ mysql> SHOW DATABASES;
 +--------------------+
 3 rows in set (0.00 sec)
 
+mysql> use wikipedia;
+Database changed
+
+mysql> \. ~/projects/chatyeo/utils/topic_detector/wikipedia_schema.sql
+Query OK, 0 rows affected (0.07 sec)
+Query OK, 0 rows affected (0.07 sec)
+Query...
+
 mysql> exit;
 Bye
-
-================
-# add public key to github.com
-
-cd ~/.ssh
-ssh-keygen -t rsa -C"Wikipedia Miner Server"
-
-#(press enter throughout the proccess)
-
-cat id_rsa.pub
-
-#copy and paste on git's public key section
-================
-
-# download Jay's code from git
-
-sudo apt-get install git-core
-cd ~/projects
-git clone git@github.com:frangucc/Chatyeo.git chatyeo
 
 # download Wikipedia miner data
 

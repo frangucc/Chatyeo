@@ -41,7 +41,7 @@ else
 	echo "Installing Nitrogen from github"
   mkdir -p /opt/erlang-libs/
   cd /opt/erlang-libs/
-  git clone git://github.com/diginux/nitrogen.git
+  git clone git://github.com/DrkCloudStrife/nitrogen.git
   cd nitrogen
   make
   cd $CWD

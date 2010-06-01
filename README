@@ -1,16 +1,16 @@
 Install the following libraries:
 
-% sudo apt-get install git-core erlang libpam0g-dev make libexpat1-dev zlib1g-dev libssl-dev automake libtool bison libmysqlclient16-dev lib64ncurses5-dev build-essential mono-2.0-devel libboost-dev ruby1.8-dev sun-java6-jdk ant pkg-config flex libmozjs-dev libcurl4-openssl-dev 
+% sudo apt-get install git-core erlang libpam0g-dev make libexpat1-dev zlib1g-dev libssl-dev automake libtool bison libmysqlclient16-dev lib64ncurses5-dev build-essential mono-2.0-devel libboost-dev ruby1.8-dev sun-java6-jdk ant pkg-config flex libmozjs-dev libcurl4-openssl-dev subversion mono-devel ejabberd pkg-config flex
 
 # might need depending on server environment
 
-% sudo apt-get install subversion mono-devel ejabberd openjdk-6-jre lamp-server^ vim unzip subversion pkg-config flex
+% sudo apt-get install openjdk-6-jre lamp-server^ vim unzip
 
 % git config --global color.ui true
 
 *Note: Use temp4now as mysql server root password
  
-edit ~/.bashrc (both root and chatyeo user)
+vim ~/.bashrc (both root and chatyeo user)
 export PATH=$PATH:/usr/local/erlware/bin
 export ERL_LIBS=/opt/erlang-libs/:/usr/lib/erlang/lib/:/usr/local/erlware/lib/
 
@@ -23,6 +23,51 @@ source ~/.bashrc
 
 Become chatyeo(or some other local user): 
 
+** For hbase and thrift
+
+$ sudo apt-get install libboost-dev
+$ sudo apt-get install ruby1.8-dev
+$ cd ~/
+$ svn co http://svn.apache.org/repos/asf/incubator/thrift/trunk thrift
+$ cd thrift
+$ ./bootstrap.sh
+$ ./configure
+$ make
+$ sudo make install
+
+For HBase:
+
+$ sudo apt-get install sun-java6-jdk
+$ sudo update-java-alternatives -s java-6-sun
+$ sudo apt-get install ant
+
+##########
+
+Download HBase, uncompress and edit hbase-env.sh to point to your Java and compile:
+
+$ cd ~/
+$ wget http://apache.imghat.com/hadoop/hbase/hbase-0.19.3/hbase-0.19.3.tar.gz
+$ tar -zxvf hbase-0.19.3.tar.gz
+$ cd hbase-0.19.3/
+$ nano conf/hbase-env.sh
+...
+# The java implementation to use.  Java 1.6 required.
+# export JAVA_HOME=/usr/java/jdk1.6.0/
+export JAVA_HOME=/usr/lib/jvm/java-6-sun/jre/
+...
+$ ant
+
+
+Copy Thrift’s Erlang libs to your Erlang lib dir:
+
+$ sudo cp -R ~/thrift/lib/erl /usr/lib/erlang/lib/thrift-0.1.0/
+
+$ cd ~/hbase-0.19.3
+$ ./bin/start-hbase.sh
+
+$ ./bin/hbase thrift start &
+
+
 Download chatyeo files
 
 Now run the code:
@@ -32,7 +77,7 @@ Now run the code:
 % ./setup_dbs
 % ./setup_users
 
-Do the following each time you change the chatyeo code
+Do the following each time you install the chatyeo code on a new instance
 
 Modify the following files:
 	chatyeo/lib/chatyeo/src/utils/topic_detector.erl
@@ -40,6 +85,7 @@ Modify the following files:
 
 change the @server to the one you want to connect to.
 
+everytime there are changes, on the source, run ~./deploy_chatyeo under chatyeo/scripts to recompile
 % ./deploy_chatyeo
 % chatyeo
 
@@ -90,47 +136,3 @@ python
 sudo cp scripts/update_sphinx /etc/cron.d/
 
 test2
-
-
-** For hbase and thrift
-
-$ sudo apt-get install libboost-dev
-$ sudo apt-get install ruby1.8-dev
-$ cd ~/
-$ svn co http://svn.apache.org/repos/asf/incubator/thrift/trunk thrift
-$ cd thrift
-$ ./bootstrap.sh
-$ ./configure
-$ make
-$ make install
-
-For HBase:
-
-$ sudo apt-get install sun-java6-jdk
-$ update-java-alternatives -s java-6-sun
-$ sudo apt-get install ant
-
-Download HBase, uncompress and edit hbase-env.sh to point to your Java and compile:
-
-$ cd ~/
-$ wget http://apache.imghat.com/hadoop/hbase/hbase-0.19.3/hbase-0.19.3.tar.gz
-$ tar -zxvf hbase-0.19.3.tar.gz
-$ cd hbase-0.19.3/
-$ nano conf/hbase-env.sh
-...
-# The java implementation to use.  Java 1.6 required.
-# export JAVA_HOME=/usr/java/jdk1.6.0/
-export JAVA_HOME=/usr/lib/jvm/java-6-sun/jre/
-...
-$ ant
-
-
-Copy Thrift’s Erlang libs to your Erlang lib dir:
-
-$ sudo cp -R ~/thrift/lib/erl /usr/lib/erlang/lib/thrift-0.1.0/
-
-$ cd ~/hbase-0.19.3
-$ ./bin/start-hbase.sh
-
-$ ./bin/hbase thrift start &
-
